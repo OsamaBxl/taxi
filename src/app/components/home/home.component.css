@@ -1,0 +1,91 @@
+.banner {
+  position: relative;
+  min-height: 300px;
+  margin-top: -65px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    286deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(5, 4, 4, 1) 38%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.heading {
+  font-size: 50px;
+  text-shadow: 4px 3px 0 #474747;
+  color: #244d90;
+}
+
+.heading-container h5 {
+  text-shadow: 4px 3px 0 rgb(116, 115, 115);
+}
+
+.home-reserve {
+  position: relative;
+  top: -60px;
+}
+.home-reserve-container {
+  background-color: #f1f0e8;
+  width: 85%;
+  margin: auto;
+}
+label {
+  font-weight: bold;
+}
+
+.summary {
+  background-color: #f1f0e8;
+  padding-bottom: 40px;
+}
+
+fa-icon {
+  font-size: 30px;
+  border: 2px solid orange;
+  /* background-color: orange; */
+  padding: 10px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.services {
+  padding-bottom: 40px;
+}
+.services-text h6 {
+  color: #244d90;
+}
+
+.services-text p {
+  color: #9298ae;
+}
+
+.vip-home {
+  background-color: #f1f0e8;
+  padding-bottom: 40px;
+}
+
+.phone-padding {
+  padding-left: 0;
+}
+
+/* Media Query */
+
+@media only screen and (max-width: 1000px) {
+  .heading-container h1 {
+    font-size: 30px;
+  }
+  .heading-container h5 {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1100px) {
+  .form-select {
+    padding: 0.375rem 0.1rem 0.375rem 0.1rem;
+  }
+}
+
+/*  */

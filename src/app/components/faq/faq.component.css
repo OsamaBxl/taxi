@@ -1,0 +1,12 @@
+.accordion-button:not(.collapsed),
+.accordion-button {
+  background-color: #b1cdf4;
+}
+
+.accordion-body {
+  line-height: 1.8;
+}
+
+.accordion-body {
+  background-color: #f1f0e8;
+}
