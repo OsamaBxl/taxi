@@ -26,6 +26,15 @@
   "Home_RAMASSER_BXL_AIRPORT": "Aéroport de Bruxelles",
   "Home_RAMASSER_CHR_AIRPORT": "Aéroport de Charleroi",
   "Home_RAMASSER_OOST_AIRPORT": "Aéroport d'Ostende",
+  "Home_RAMASSER_LIEGE_AIRPORT": "Aéroport de Liège",
+  "Home_RAMASSER_ANVERS_AIRPORT": "Aéroport d'Anvers",
+
+  "Home_RAMASSER_SCHIPHOL_AIRPORT": "Aéroport d'Amsterdam-Schiphol",
+  "Home_RAMASSER_DE_GAULLE_AIRPORT": "Aéroport de Paris-Charles-de-Gaulle",
+  "Home_RAMASSER_LILLE_AIRPORT": "Aéroport de Lille",
+  "Home_RAMASSER_ORLY_AIRPORT": "Aéroport Paris-Orly",
+  "Home_RAMASSER_BEAUVAIS_AIRPORT": "Aéroport Paris Beauvais",
+
   "Home_RAMASSER_AUTRE": "Autre",
   "Home_RESERVE_DEPOSER": "Déposer à",
   "Home_RESERVE_CHOIX": "Choix de taxi",
