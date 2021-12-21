@@ -36,7 +36,7 @@
                                 <label>{{ 'Home_RESERVE_NOM' | translate}}</label> <span class="text-danger"> *</span>
                                 <input type="text" formControlName="fullName" class="form-control" [ngClass]="{'is-invalid': formValidate.get('fullName')?.errors && formValidate.get('fullName')?.touched }">
                                 <!-- Full name Validation -->
-                                <div *ngIf="formValidate.get('fullName')?.errors && formValidate.get('fullName')?.touched">
+                                <div *ngIf="formValidate.get('fullName')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('fullName')?.errors?.['required']">
                                         Name is required</div>
                                     <div class="text-danger" *ngIf="formValidate.get('fullName')?.errors?.['minlength']">
@@ -51,7 +51,7 @@
                                     <option value="standard">Standard</option>
                                     <option value="vip">VIP</option>
                                 </select>
-                                <div *ngIf="formValidate.get('choiceTaxi')?.errors && formValidate.get('choiceTaxi')?.touched">
+                                <div *ngIf="formValidate.get('choiceTaxi')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('choiceTaxi')?.errors?.['required']">
                                         Field is required
                                     </div>
@@ -76,7 +76,7 @@
                                     <option value="other">{{ 'Home_RAMASSER_AUTRE' | translate}}</option>
                                 </select>
 
-                                <div *ngIf="formValidate.get('pickUp')?.errors && formValidate.get('pickUp')?.touched">
+                                <div *ngIf="formValidate.get('pickUp')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('pickUp')?.errors?.['required']">
                                         Field is required
                                     </div>
@@ -121,7 +121,7 @@
                                     </div>
                                 </div>
                                 <!-- Validate Phone -->
-                                <div *ngIf="formValidate.get('phoneNumber')?.errors && formValidate.get('phoneNumber')?.touched">
+                                <div *ngIf="formValidate.get('phoneNumber')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('phoneNumber')?.errors?.['required']">
                                         Phone number is required
                                     </div>
@@ -143,7 +143,7 @@
                                     <option value="5">5</option>
                                 </select>
                                 <!-- Validate persons number -->
-                                <div *ngIf="formValidate.get('persons')?.errors && formValidate.get('persons')?.touched">
+                                <div *ngIf="formValidate.get('persons')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('persons')?.errors?.['required']">
                                         Field is required</div>
                                 </div>
@@ -181,7 +181,7 @@
                                 </div>
 
                                 <!-- Validate dropOff -->
-                                <div *ngIf="formValidate.get('dropOff')?.errors && formValidate.get('dropOff')?.touched">
+                                <div *ngIf="formValidate.get('dropOff')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('dropOff')?.errors?.['required']">
                                         Field is required
                                     </div>
@@ -200,7 +200,7 @@
                                 <label class="mt-3">E-mail</label>
                                 <span class="text-danger"> *</span>
                                 <input formControlName="email" type="text" placeholder="E-mail" class="form-control" [ngClass]="{'is-invalid': formValidate.get('email')?.errors && formValidate.get('email')?.touched }">
-                                <div *ngIf="formValidate.get('email')?.errors && formValidate.get('email')?.touched">
+                                <div *ngIf="formValidate.get('email')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('email')?.errors?.['required']">
                                         Name is required
                                     </div>
@@ -216,7 +216,7 @@
                                 <span class="text-danger"> *</span>
                                 <input formControlName="time" type="datetime-local" class="form-control" name="reservationDate" [ngClass]="{'is-invalid': formValidate.get('time')?.errors && formValidate.get('time')?.touched }">
 
-                                <div *ngIf="formValidate.get('time')?.errors && formValidate.get('time')?.touched">
+                                <div *ngIf="formValidate.get('time')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('time')?.errors?.['required']">
                                         Time is required
                                     </div>
@@ -234,7 +234,7 @@
                                     <option value="4">4</option>
                                     <option value="5">5</option>
                                 </select>
-                                <div *ngIf="formValidate.get('suitecase')?.errors && formValidate.get('suitecase')?.touched">
+                                <div *ngIf="formValidate.get('suitecase')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('suitecase')?.errors?.['required']">
                                         Field is required
                                     </div>

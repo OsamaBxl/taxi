@@ -71,7 +71,8 @@ export class HomeComponent implements OnInit {
   // }
 
   onFormSubmit() {
-    let phoneNumber =
+    if(this.formValidate.valid){
+      let phoneNumber =
       this.formValidate.value.phoneCode + this.formValidate.value.phoneNumber;
 
     if (phoneNumber[3] == '0') {
@@ -100,6 +101,8 @@ export class HomeComponent implements OnInit {
       console.log(data);
       this.formValidate.reset()
     })
+    }
+    
   }
 
 
