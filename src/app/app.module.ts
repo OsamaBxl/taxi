@@ -16,7 +16,6 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +28,6 @@ import { PaymentComponent } from './components/payment/payment.component';
     ContactComponent,
     NavbarComponent,
     FooterComponent,
-    PaymentComponent,
   ],
   imports: [
     BrowserModule,
