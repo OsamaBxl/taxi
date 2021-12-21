@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { faHandHoldingUsd } from '@fortawesome/free-solid-svg-icons';
 import { faSmileBeam } from '@fortawesome/free-solid-svg-icons';
 import { faVirusSlash } from '@fortawesome/free-solid-svg-icons';
@@ -14,6 +14,10 @@ import { BOOkingData } from 'src/app/interfaces/booking-data';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+
+  @Output() checkoutID:string;
+
+
   choiceTaxi = 'standard';
   phoneCode = '+32';
   payment = 'cash';
@@ -70,7 +74,28 @@ export class HomeComponent implements OnInit {
   //     });
   // }
 
-  onFormSubmit() {
+
+  onFormSubmit(){
+    // this.payment = 'visa';
+    if(this.formValidate.valid){
+      this.validateBooking.checkout(this.estimationCost * 0.25).subscribe(
+        (checkOutData)=>{
+          const checkoutID = checkOutData.data.id;
+          if(!!checkoutID){
+            this.checkoutID = checkoutID;
+            console.log(this.checkoutID);
+  
+            this.validateBooking.paymentForm(checkoutID).subscribe(data=>{
+              console.log(data);
+            })
+          }
+        }
+      )
+    }
+    
+  }
+
+  sendBookingRequest() {
     let phoneNumber =
       this.formValidate.value.phoneCode + this.formValidate.value.phoneNumber;
 
