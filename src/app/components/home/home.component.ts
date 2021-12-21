@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { faHandHoldingUsd } from '@fortawesome/free-solid-svg-icons';
 import { faSmileBeam } from '@fortawesome/free-solid-svg-icons';
 import { faVirusSlash } from '@fortawesome/free-solid-svg-icons';
@@ -14,6 +14,10 @@ import { BOOkingData } from 'src/app/interfaces/booking-data';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+
+  @Output() checkoutID:string;
+
+
   choiceTaxi = 'standard';
   phoneCode = '+32';
   payment = 'cash';

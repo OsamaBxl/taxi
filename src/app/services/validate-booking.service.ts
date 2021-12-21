@@ -28,4 +28,10 @@ export class ValidateBookingService {
       'pick_to':p2
     });
   } 
+
+
+  checkout(price:number):Observable<any>{
+    return this.http.get(`${environment.apiUrl}/get-checkout-id/${price}`)
+  }
+
 }

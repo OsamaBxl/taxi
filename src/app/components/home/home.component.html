@@ -311,11 +311,13 @@
                             <h6 class="my-3">{{ 'Home_RESERVE_INFO' | translate}}</h6>
                             <input type="text" class="form-control" formControlName="additionalInfo">
                         </div>
+
                     </div>
                     <!-- <div class="text-center mt-4">
                         <button type="submit" class="btn btn-primary" [disabled]="formValidate.value.dropOff == '' || formValidate.value.pickUp == '' || formValidate.get('pickUp')?.untouched || formValidate.get('dropOff')?.untouched ">{{
                             'Home_RESERVE_BTN' | translate}}</button>
                     </div> -->
+                    <!-- <app-payment *ngIf="!!checkoutID" [checkoutID]="checkoutID"></app-payment> -->
                     <div class="text-center mt-4">
                         <button type="submit" class="btn btn-primary" [disabled]="formValidate.value.dropOff == '' || formValidate.value.pickUp == '' || formValidate.get('pickUp')?.untouched || formValidate.get('dropOff')?.untouched ">{{
                             'Home_RESERVE_BTN' | translate}}</button>
