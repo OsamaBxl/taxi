@@ -54,7 +54,11 @@ export class HomeComponent implements OnInit {
     additionalInfo: new FormControl(null),
   });
 
-  from: string;
+  DistanceText: string;
+  DistanceValue: number;
+  durationText : string;
+  durationValue : number;
+  estimatedPrice:number;
 
   constructor(private validateBooking: ValidateBookingService) {}
 
@@ -127,14 +131,26 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  gitDistance() {
-    const p1 = this.formValidate.get(['from'])?.value;
-    const p2 = this.formValidate.get(['to'])?.value;
-    console.log('p1 ====> ', p1);
-    console.log('p2 ====> ', p2);
+  getDistance() {
+    const p1 = (<HTMLInputElement>document.getElementById('from')).value;
+    const p2 = (<HTMLInputElement>document.getElementById('to')).value;
+    if (!!p1 && !!p2) {
+      return new google.maps.DistanceMatrixService().getDistanceMatrix({'origins': [p1], 'destinations': [p2] , travelMode : google.maps.TravelMode.DRIVING}, (results: any) => {
+        // console.log('distance results (mts) -- ', results.rows[0].elements[0])
+        this.DistanceText = results.rows[0].elements[0].distance.text
+        this.DistanceValue = results.rows[0].elements[0].distance.value 
+        this.durationText = results.rows[0].elements[0].duration.text
+        this.durationValue = results.rows[0].elements[0].duration.value
 
-    // if (!!p1 && !!p2) {
-    //   this.validateBooking.getDistance(p1, p2).subscribe;
-    // }
+        if((this.DistanceValue / 1000) < 20){
+          this.estimatedPrice = (this.durationValue / 1000) * 2.5
+        }else{
+          this.estimatedPrice = (this.durationValue / 1000) * 1.5
+        }
+
+    });
+    }
   }
+
+
 }
