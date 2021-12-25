@@ -34,12 +34,14 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group mt-3">
                                 <label>{{ 'Home_RESERVE_NOM' | translate}}</label> <span class="text-danger"> *</span>
-                                <input type="text" formControlName="fullName" class="form-control" [ngClass]="{'is-invalid': formValidate.get('fullName')?.errors && formValidate.get('fullName')?.touched }">
+                                <input type="text" formControlName="fullName" class="form-control"
+                                    [ngClass]="{'is-invalid': formValidate.get('fullName')?.errors && formValidate.get('fullName')?.touched }">
                                 <!-- Full name Validation -->
                                 <div *ngIf="formValidate.get('fullName')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('fullName')?.errors?.['required']">
                                         Name is required</div>
-                                    <div class="text-danger" *ngIf="formValidate.get('fullName')?.errors?.['minlength']">
+                                    <div class="text-danger"
+                                        *ngIf="formValidate.get('fullName')?.errors?.['minlength']">
                                         Minimum length is 3 characters
                                     </div>
                                 </div>
@@ -52,40 +54,34 @@
                                     <option value="vip">VIP</option>
                                 </select>
                                 <div *ngIf="formValidate.get('choiceTaxi')?.errors && formValidate.dirty">
-                                    <div class="text-danger" *ngIf="formValidate.get('choiceTaxi')?.errors?.['required']">
+                                    <div class="text-danger"
+                                        *ngIf="formValidate.get('choiceTaxi')?.errors?.['required']">
                                         Field is required
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group mt-3">
-                                <label>{{ 'Home_RESERVE_RAMASSER' | translate}} </label> <span class="text-danger">
-                                    *</span>
-                                <select (change)="getDistProces()" formControlName="pickUp" class="form-select" [ngClass]="{'is-invalid': formValidate.get('pickUp')?.errors && formValidate.get('pickUp')?.touched }">
-                                    <!-- <option value="Bruxelles ville">{{ 'Home_RAMASSER_BXL' | translate}}</option>
-                                    <option value="Bruxelles aéroport">{{ 'Home_RAMASSER_BXL_AIRPORT' | translate}}
-                                    </option>
-                                    <option value="Charleroi aéroport">{{ 'Home_RAMASSER_CHR_AIRPORT' | translate}}
-                                    </option>
-                                    <option value="Ostende Aéroport">{{ 'Home_RAMASSER_OOST_AIRPORT' | translate}}
-                                    </option>
-                                    <option value="autre">{{ 'Home_RAMASSER_AUTRE' | translate}}</option> -->
-                                    <ng-container *ngFor="let place of myPlaces" >
-                                        <option *ngIf="place['city_name'] != formValidate.get('dropOff')?.value"  value="{{place['city_name']}}">{{place['city_name']}}</option>
-                                    </ng-container>
-                                    <option value="other">{{ 'Home_RAMASSER_AUTRE' | translate}}</option>
-                                </select>
+                                <label for="from">From</label>
+                                <input type="text" id="from" class="form-control" placeholder="Départ"
+                                    [(ngModel)]="from" [ngModelOptions]="{standalone:true}">
+                                {{ from }}
+                            </div>
+                            <div class="form-group">
+                                <label for="from">To</label>
+                                <input type="text" id="to" class="form-control" placeholder="Destination">
+                            </div>
+                            <button (click)="gitDistance()"> Click</button>
+                            <div class="mapDirection">
+                                <div id="googleMap" class="d-none"></div>
+                                <div id="output">
 
-                                <div *ngIf="formValidate.get('pickUp')?.errors && formValidate.dirty">
-                                    <div class="text-danger" *ngIf="formValidate.get('pickUp')?.errors?.['required']">
-                                        Field is required
-                                    </div>
                                 </div>
-                                <div [style.display]="formValidate.value.pickUp == 'other'?'block':'none'">
-                                    <label class="text-warning mt-3">Tapez l'adresse de ramasser</label>
-                                    <input formControlName="otherAddressPick" type="text" class="form-control">
-                                </div>
+                            </div>
 
+
+
+                            <div>
                                 <!-- [ngClass]="{'d-none' :formValidate.value.dropOff == 'autre' || formValidate.value.pickUp == 'autre'  ||  (formValidate.get('dropOff')?.untouched || formValidate.get('pickUp')?.untouched) }" -->
                                 <p class="text-success" *ngIf="!!estimationCost && estimationCost != 0">
                                     <br> Estimation: <b>A payer: {{estimationCost}}€</b>
@@ -103,7 +99,8 @@
                                 <div class="phone">
                                     <div class="row">
                                         <div class="col-4">
-                                            <select [(ngModel)]="phoneCode" formControlName="phoneCode" class="form-select">
+                                            <select [(ngModel)]="phoneCode" formControlName="phoneCode"
+                                                class="form-select">
                                                 <option value="+31">+31</option>
                                                 <option value="+32">+32</option>
                                                 <option value="+33">+33</option>
@@ -116,16 +113,20 @@
                                         </div>
 
                                         <div class="col-8 phone-padding">
-                                            <input formControlName="phoneNumber" type="text" class="form-control is-invalid" placeholder="ex: 472958521" [ngClass]="{'is-invalid': formValidate.get('phoneNumber')?.errors && formValidate.get('phoneNumber')?.touched }">
+                                            <input formControlName="phoneNumber" type="text"
+                                                class="form-control is-invalid" placeholder="ex: 472958521"
+                                                [ngClass]="{'is-invalid': formValidate.get('phoneNumber')?.errors && formValidate.get('phoneNumber')?.touched }">
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Validate Phone -->
                                 <div *ngIf="formValidate.get('phoneNumber')?.errors && formValidate.dirty">
-                                    <div class="text-danger" *ngIf="formValidate.get('phoneNumber')?.errors?.['required']">
+                                    <div class="text-danger"
+                                        *ngIf="formValidate.get('phoneNumber')?.errors?.['required']">
                                         Phone number is required
                                     </div>
-                                    <div class="text-danger" *ngIf="formValidate.get('phoneNumber')?.errors?.['minlength']">
+                                    <div class="text-danger"
+                                        *ngIf="formValidate.get('phoneNumber')?.errors?.['minlength']">
                                         Phone number is not valid
                                     </div>
                                 </div>
@@ -135,7 +136,8 @@
                             <div>
                                 <label class="mt-3">{{ 'Home_RESERVE_PERSONNES' | translate}}</label>
                                 <span class="text-danger"> *</span>
-                                <select formControlName="persons" class="form-select" [ngClass]="{'is-invalid': formValidate.get('persons')?.errors && formValidate.get('persons')?.touched }">
+                                <select formControlName="persons" class="form-select"
+                                    [ngClass]="{'is-invalid': formValidate.get('persons')?.errors && formValidate.get('persons')?.touched }">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -150,11 +152,12 @@
                             </div>
 
 
-                            <div>
-                                <label class="mt-3">{{ 'Home_RESERVE_DEPOSER' | translate}}</label>
-                                <span class="text-danger"> *</span>
-                                <select (change)="getDistProces()" formControlName="dropOff" class="form-select" [ngClass]="{'is-invalid': formValidate.get('dropOff')?.errors && formValidate.get('dropOff')?.touched }">
-                                  <!--   <option [disabled]="formValidate.value.pickUp == 'Bruxelles ville' "
+                            <!-- <div> -->
+                            <!-- <label class="mt-3">{{ 'Home_RESERVE_DEPOSER' | translate}}</label> -->
+                            <!-- <span class="text-danger"> *</span> -->
+                            <!-- <select (change)="getDistProces()" formControlName="dropOff" class="form-select" -->
+                            <!-- [ngClass]="{'is-invalid': formValidate.get('dropOff')?.errors && formValidate.get('dropOff')?.touched }"> -->
+                            <!--   <option [disabled]="formValidate.value.pickUp == 'Bruxelles ville' "
                                         value="Bruxelles ville">
                                         {{ 'Home_RAMASSER_BXL' | translate}}</option>
                                     <option [disabled]="formValidate.value.pickUp == 'Bruxelles aéroport' "
@@ -167,28 +170,29 @@
                                         value="Ostende Aéroport">{{
                                         'Home_RAMASSER_OOST_AIRPORT' | translate}}</option>
                                     <option value="autre">{{ 'Home_RAMASSER_AUTRE' | translate}}</option> -->
-                                    <ng-container *ngFor="let place of myPlaces" >
-                                        <option *ngIf="place['city_name'] != formValidate.get('pickUp')?.value"  value="{{place['city_name']}}">{{place['city_name']}}</option>
-                                    </ng-container>
+                            <!-- <ng-container *ngFor="let place of myPlaces">
+                                        <option *ngIf="place['city_name'] != formValidate.get('pickUp')?.value"
+                                            value="{{place['city_name']}}">{{place['city_name']}}</option>
+                                    </ng-container> -->
 
-                                    <option value="other">{{ 'Home_RAMASSER_AUTRE' | translate}}</option> 
-                                    
-                                </select>
+                            <!-- <option value="other">{{ 'Home_RAMASSER_AUTRE' | translate}}</option> -->
 
-                                <div [style.display]="formValidate.value.dropOff == 'other'?'block':'none'">
+                            <!-- </select> -->
+
+                            <!-- <div [style.display]="formValidate.value.dropOff == 'other'?'block':'none'">
                                     <label class="text-warning mt-3">Tapez l'adresse pour déposer</label>
                                     <input formControlName="otherAddressDrop" type="text" class="form-control">
                                 </div>
 
                                 <!-- Validate dropOff -->
-                                <div *ngIf="formValidate.get('dropOff')?.errors && formValidate.dirty">
-                                    <div class="text-danger" *ngIf="formValidate.get('dropOff')?.errors?.['required']">
-                                        Field is required
-                                    </div>
-                                </div>
+                            <!-- <div *ngIf="formValidate.get('dropOff')?.errors && formValidate.dirty"> -->
+                            <!-- <div class="text-danger" *ngIf="formValidate.get('dropOff')?.errors?.['required']"> -->
+                            Field is required
+                            <!-- </div> -->
+                            <!-- </div> --> -->
 
 
-                            </div>
+                            <!-- </div> -->
 
 
 
@@ -199,7 +203,8 @@
                             <div>
                                 <label class="mt-3">E-mail</label>
                                 <span class="text-danger"> *</span>
-                                <input formControlName="email" type="text" placeholder="E-mail" class="form-control" [ngClass]="{'is-invalid': formValidate.get('email')?.errors && formValidate.get('email')?.touched }">
+                                <input formControlName="email" type="text" placeholder="E-mail" class="form-control"
+                                    [ngClass]="{'is-invalid': formValidate.get('email')?.errors && formValidate.get('email')?.touched }">
                                 <div *ngIf="formValidate.get('email')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('email')?.errors?.['required']">
                                         Name is required
@@ -214,7 +219,9 @@
                             <div>
                                 <label class="mt-3">Time</label>
                                 <span class="text-danger"> *</span>
-                                <input formControlName="time" type="datetime-local" class="form-control" name="reservationDate" [ngClass]="{'is-invalid': formValidate.get('time')?.errors && formValidate.get('time')?.touched }">
+                                <input formControlName="time" type="datetime-local" class="form-control"
+                                    name="reservationDate"
+                                    [ngClass]="{'is-invalid': formValidate.get('time')?.errors && formValidate.get('time')?.touched }">
 
                                 <div *ngIf="formValidate.get('time')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('time')?.errors?.['required']">
@@ -226,7 +233,8 @@
                             <div>
                                 <label class="mt-3">{{ 'Home_RESERVE_VALISE' | translate}}</label>
                                 <span class="text-danger"> *</span>
-                                <select formControlName="suitecase" class="form-select" [ngClass]="{'is-invalid': formValidate.get('suitecase')?.errors && formValidate.get('suitecase')?.touched }">
+                                <select formControlName="suitecase" class="form-select"
+                                    [ngClass]="{'is-invalid': formValidate.get('suitecase')?.errors && formValidate.get('suitecase')?.touched }">
                                     <option value="1">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -235,7 +243,8 @@
                                     <option value="5">5</option>
                                 </select>
                                 <div *ngIf="formValidate.get('suitecase')?.errors && formValidate.dirty">
-                                    <div class="text-danger" *ngIf="formValidate.get('suitecase')?.errors?.['required']">
+                                    <div class="text-danger"
+                                        *ngIf="formValidate.get('suitecase')?.errors?.['required']">
                                         Field is required
                                     </div>
                                 </div>
@@ -270,7 +279,8 @@
 
 
                                 <!-- Payment proccess -->
-                                <div class="payment-proccess" [ngClass]="{'d-none': formValidate.value.payment === 'cash'}">
+                                <div class="payment-proccess"
+                                    [ngClass]="{'d-none': formValidate.value.payment === 'cash'}">
                                     <div class="card">
                                         <div class="card-header">
                                             <h5 class="card-title">Make a payment</h5>
@@ -280,7 +290,8 @@
                                             <div>
                                                 <div class="row">
                                                     <div class="col-9">
-                                                        <input type="number" disabled class="form-control pe-0" value="40">
+                                                        <input type="number" disabled class="form-control pe-0"
+                                                            value="40">
                                                     </div>
                                                     <div class="col-3 ps-0">EUR</div>
                                                 </div>
@@ -290,10 +301,14 @@
                                                     <div class="payment-img">
                                                         <div class="row">
                                                             <div class="col-4">
-                                                                <img src="assets/images/payment/paypal-logo.png" alt="paypal" class="img-fluid shadow" width="100" style="cursor: pointer;">
+                                                                <img src="assets/images/payment/paypal-logo.png"
+                                                                    alt="paypal" class="img-fluid shadow" width="100"
+                                                                    style="cursor: pointer;">
                                                             </div>
                                                             <div class="col-4">
-                                                                <img src="assets/images/payment/visa-mastercard-logo.png" alt="visa/mastercard" class="img-fluid shadow" width="100" style="cursor: pointer;">
+                                                                <img src="assets/images/payment/visa-mastercard-logo.png"
+                                                                    alt="visa/mastercard" class="img-fluid shadow"
+                                                                    width="100" style="cursor: pointer;">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -319,7 +334,8 @@
                     </div> -->
                     <!-- <app-payment *ngIf="!!checkoutID" [checkoutID]="checkoutID"></app-payment> -->
                     <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-primary" [disabled]="formValidate.value.dropOff == '' || formValidate.value.pickUp == '' || formValidate.get('pickUp')?.untouched || formValidate.get('dropOff')?.untouched ">{{
+                        <button type="submit" class="btn btn-primary"
+                            [disabled]="formValidate.value.from == '' || formValidate.value.to == '' || formValidate.get('from')?.untouched || formValidate.get('to')?.untouched ">{{
                             'Home_RESERVE_BTN' | translate}}</button>
                     </div>
 

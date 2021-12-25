@@ -24,7 +24,12 @@
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.css"],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/custom.js",
+              "src/assets/js/mapDirection.js",
+              "src/assets/js/mapDirection2.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -86,10 +91,7 @@
             "karmaConfig": "karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.css"],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "src/assets/js/custom.js"
-            ]
+            "scripts": []
           }
         }
       }

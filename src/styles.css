@@ -27,3 +27,8 @@ p {
   padding-bottom: 30px;
   text-shadow: 4px 3px 0 #bcbcbc;
 }
+
+#googleMap {
+  width: 80%;
+  height: 400px;
+}
