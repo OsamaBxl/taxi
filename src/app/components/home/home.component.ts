@@ -61,7 +61,8 @@ export class HomeComponent implements OnInit {
   durationText: string;
   durationValue: number;
   estimatedPrice: number;
-
+  from:string;
+  to:string;
   constructor(private validateBooking: ValidateBookingService) {}
 
   ngOnInit(): void {
@@ -136,8 +137,8 @@ export class HomeComponent implements OnInit {
   }
 
   getDistance() {
-    const p1 = (<HTMLInputElement>document.getElementById('from')).value;
-    const p2 = (<HTMLInputElement>document.getElementById('to')).value;
+    const p1 = this.from//(<HTMLInputElement>document.getElementById('from')).value;
+    const p2 = this.to //(<HTMLInputElement>document.getElementById('to')).value;
     if (!!p1 && !!p2) {
       return new google.maps.DistanceMatrixService().getDistanceMatrix(
         {
@@ -152,13 +153,25 @@ export class HomeComponent implements OnInit {
           this.durationText = results.rows[0].elements[0].duration.text;
           this.durationValue = results.rows[0].elements[0].duration.value;
 
-          if (this.DistanceValue / 1000 < 20) {
-            this.estimatedPrice = (this.durationValue / 1000) * 2.5;
+          if ((this.DistanceValue / 1000) < 20) {
+            // console.log('from if' , this.DistanceValue);
+            this.estimatedPrice = (this.DistanceValue / 1000) * 2.5;
           } else {
-            this.estimatedPrice = (this.durationValue / 1000) * 1.5;
+            // console.log('from Else' , this.DistanceValue);
+            this.estimatedPrice = (this.DistanceValue / 1000) * 1.5;
           }
         }
       );
     }
+  }
+
+
+  getFrom(place: object) { 
+    this.from = place['formatted_address'];
+  }
+
+
+  getTo(place: object) { 
+    this.to = place['formatted_address'];
   }
 }
