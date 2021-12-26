@@ -41,6 +41,8 @@ export class HomeComponent implements OnInit {
       Validators.minLength(9),
     ]),
     email: new FormControl(null, [Validators.required, Validators.email]),
+    pickUp: new FormControl(null, [Validators.required]),
+    dropOff: new FormControl(null, [Validators.required]),
     from: new FormControl(null, [Validators.required]),
     phoneCode: new FormControl(null, [Validators.required]),
     otherAddressPick: new FormControl(null),
@@ -56,9 +58,9 @@ export class HomeComponent implements OnInit {
 
   DistanceText: string;
   DistanceValue: number;
-  durationText : string;
-  durationValue : number;
-  estimatedPrice:number;
+  durationText: string;
+  durationValue: number;
+  estimatedPrice: number;
 
   constructor(private validateBooking: ValidateBookingService) {}
 
@@ -92,7 +94,7 @@ export class HomeComponent implements OnInit {
       if (phoneNumber[3] == '0') {
         phoneNumber = phoneNumber.replace('0', '');
       }
-      console.log(this.formValidate.get(['pickUp'])?.value);
+
       const newBooking: BOOkingData = {
         fullName: this.formValidate.get(['fullName'])?.value,
         phoneCode: this.formValidate.get(['phoneCode'])?.value,
@@ -101,6 +103,8 @@ export class HomeComponent implements OnInit {
         choiceTaxi: this.formValidate.get(['choiceTaxi'])?.value,
         personsNum: this.formValidate.get(['persons'])?.value,
         time: this.formValidate.get(['time'])?.value,
+        pickUp: this.formValidate.get(['pickUp'])?.value,
+        dropOff: this.formValidate.get(['dropOff'])?.value,
         from: this.formValidate.get(['from'])?.value,
         to: this.formValidate.get(['to'])?.value,
         suitecaseNum: this.formValidate.get(['suitecase'])?.value,
@@ -135,22 +139,26 @@ export class HomeComponent implements OnInit {
     const p1 = (<HTMLInputElement>document.getElementById('from')).value;
     const p2 = (<HTMLInputElement>document.getElementById('to')).value;
     if (!!p1 && !!p2) {
-      return new google.maps.DistanceMatrixService().getDistanceMatrix({'origins': [p1], 'destinations': [p2] , travelMode : google.maps.TravelMode.DRIVING}, (results: any) => {
-        // console.log('distance results (mts) -- ', results.rows[0].elements[0])
-        this.DistanceText = results.rows[0].elements[0].distance.text
-        this.DistanceValue = results.rows[0].elements[0].distance.value 
-        this.durationText = results.rows[0].elements[0].duration.text
-        this.durationValue = results.rows[0].elements[0].duration.value
+      return new google.maps.DistanceMatrixService().getDistanceMatrix(
+        {
+          origins: [p1],
+          destinations: [p2],
+          travelMode: google.maps.TravelMode.DRIVING,
+        },
+        (results: any) => {
+          // console.log('distance results (mts) -- ', results.rows[0].elements[0])
+          this.DistanceText = results.rows[0].elements[0].distance.text;
+          this.DistanceValue = results.rows[0].elements[0].distance.value;
+          this.durationText = results.rows[0].elements[0].duration.text;
+          this.durationValue = results.rows[0].elements[0].duration.value;
 
-        if((this.DistanceValue / 1000) < 20){
-          this.estimatedPrice = (this.durationValue / 1000) * 2.5
-        }else{
-          this.estimatedPrice = (this.durationValue / 1000) * 1.5
+          if (this.DistanceValue / 1000 < 20) {
+            this.estimatedPrice = (this.durationValue / 1000) * 2.5;
+          } else {
+            this.estimatedPrice = (this.durationValue / 1000) * 1.5;
+          }
         }
-
-    });
+      );
     }
   }
-
-
 }

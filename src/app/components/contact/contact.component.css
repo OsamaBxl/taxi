@@ -14,7 +14,7 @@ i,
 }
 
 .card-header {
-  background-color: #f1f0e8 !important;
+  background-color: #e8f0fe !important;
 }
 
 .fa-mobile-alt,
@@ -22,8 +22,10 @@ i,
   font-size: 23px !important;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-primary i {
   background-color: #244d90 !important;
+  color: white !important;
 }
 
 .btn-primary.disabled {

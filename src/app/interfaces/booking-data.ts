@@ -1,5 +1,7 @@
 export interface BOOkingData {
   fullName: string;
+  pickUp: string;
+  dropOff: string;
   from: string;
   to: string;
   otherAddressPick: string;
