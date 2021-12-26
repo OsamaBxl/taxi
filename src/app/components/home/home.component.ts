@@ -93,7 +93,7 @@ export class HomeComponent implements OnInit {
         to:  this.to,
         suitecaseNum: this.formValidate.get(['suitecase'])?.value,
         additionalInfo: this.formValidate.get(['additionalInfo'])?.value,
-        estimation: this.estimationCost,
+        estimation: this.estimatedPrice ? this.estimatedPrice : 0,
         otherAddressDrop: this.formValidate.get(['otherAddressDrop'])?.value,
         otherAddressPick: this.formValidate.get(['otherAddressPick'])?.value,
         payment: this.formValidate.get(['payment'])?.value,
