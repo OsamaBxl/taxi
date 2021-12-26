@@ -1,11 +1,9 @@
 export interface BOOkingData {
   fullName: string;
-  pickUp: string;
-  dropOff: string;
   from: string;
   to: string;
-  otherAddressPick: string;
-  otherAddressDrop: string;
+  otherAddressPick?: string;
+  otherAddressDrop?: string;
   phoneCode: string;
   phoneNumber: string;
   email: string;
@@ -16,4 +14,6 @@ export interface BOOkingData {
   payment: string;
   additionalInfo: string;
   estimation: number;
+  seigeEnfant?: string;
+  vol?: string;
 }

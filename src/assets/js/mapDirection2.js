@@ -1,3 +1,0 @@
-function thisis() {
-  alert("yes");
-}

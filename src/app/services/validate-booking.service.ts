@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 import { BOOkingData } from '../interfaces/booking-data';
-import {} from 'googlemaps'; 
+import {} from 'googlemaps';
 
 @Injectable({
   providedIn: 'root',
@@ -14,10 +14,6 @@ export class ValidateBookingService {
 
   createBooking(newBooking: BOOkingData): Observable<any> {
     return this.http.post(`${environment.apiUrl}/createBooking`, newBooking);
-  }
-
-  getplaces(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/getAllDestinations`);
   }
 
   getPrice(p1: string, p2: string): Observable<any> {
@@ -30,12 +26,4 @@ export class ValidateBookingService {
   checkout(price: number): Observable<any> {
     return this.http.get(`${environment.apiUrl}/get-checkout-id/${price}`);
   }
-
-  // getDistance(from: string, to: string) {
-  //   console.log('p1 ====> ', from);
-  //   console.log('p2 ====> ', to);
-  //   return this.http.get(
-  //     `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${from}&destinations=${to}&units=imperial&key=${environment.GoogleapiKey}`
-  //   );
-  // }
 }

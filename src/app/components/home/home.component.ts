@@ -8,9 +8,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidateBookingService } from 'src/app/services/validate-booking.service';
 import { BOOkingData } from 'src/app/interfaces/booking-data';
 
-declare function calculateDirection();
-// declare function calcRoute();
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -20,6 +17,7 @@ export class HomeComponent implements OnInit {
   @Output() checkoutID: string;
 
   choiceTaxi = 'standard';
+  seigeEnfant = 'no';
   phoneCode = '+32';
   payment = 'cash';
   faHandHoldingUsd = faHandHoldingUsd;
@@ -41,12 +39,12 @@ export class HomeComponent implements OnInit {
       Validators.minLength(9),
     ]),
     email: new FormControl(null, [Validators.required, Validators.email]),
-    pickUp: new FormControl(null, [Validators.required]),
-    dropOff: new FormControl(null, [Validators.required]),
-    from: new FormControl(null, [Validators.required]),
     phoneCode: new FormControl(null, [Validators.required]),
     otherAddressPick: new FormControl(null),
     otherAddressDrop: new FormControl(null),
+    vol: new FormControl(null),
+    seigeEnfant: new FormControl(null),
+    from: new FormControl(null, [Validators.required]),
     to: new FormControl(null, [Validators.required]),
     suitecase: new FormControl(null, [Validators.required]),
     persons: new FormControl(null, [Validators.required]),
@@ -61,31 +59,16 @@ export class HomeComponent implements OnInit {
   durationText: string;
   durationValue: number;
   estimatedPrice: number;
-  from:string;
-  to:string;
+  from: string;
+  to: string;
   constructor(private validateBooking: ValidateBookingService) {}
 
   ngOnInit(): void {
-    // this.onFormSubmit(this.formValidate);
-    // this.onValidateFromBackEnd();
-
-    //Call the function calculateDirection from assets/js/mapDirection.js
-    calculateDirection();
-    // calcRoute();
-
-    this.validateBooking.getplaces().subscribe((places) => {
-      // console.log(places);
-      this.myPlaces = places.data;
-    });
+    // this.validateBooking.getplaces().subscribe((places) => {
+    //   // console.log(places);
+    //   this.myPlaces = places.data;
+    // });
   }
-
-  // onValidateFromBackEnd() {
-  //   this.validateBooking
-  //     .validateBooking(this.formValidate.value)
-  //     .subscribe((data) => {
-  //       console.log(data);
-  //     });
-  // }
 
   onFormSubmit() {
     if (this.formValidate.valid) {
@@ -103,9 +86,9 @@ export class HomeComponent implements OnInit {
         email: this.formValidate.get(['email'])?.value,
         choiceTaxi: this.formValidate.get(['choiceTaxi'])?.value,
         personsNum: this.formValidate.get(['persons'])?.value,
+        seigeEnfant: this.formValidate.get(['seigeEnfant'])?.value,
+        vol: this.formValidate.get(['vol'])?.value,
         time: this.formValidate.get(['time'])?.value,
-        pickUp: this.formValidate.get(['pickUp'])?.value,
-        dropOff: this.formValidate.get(['dropOff'])?.value,
         from: this.formValidate.get(['from'])?.value,
         to: this.formValidate.get(['to'])?.value,
         suitecaseNum: this.formValidate.get(['suitecase'])?.value,
@@ -137,8 +120,8 @@ export class HomeComponent implements OnInit {
   }
 
   getDistance() {
-    const p1 = this.from//(<HTMLInputElement>document.getElementById('from')).value;
-    const p2 = this.to //(<HTMLInputElement>document.getElementById('to')).value;
+    const p1 = this.from; //(<HTMLInputElement>document.getElementById('from')).value;
+    const p2 = this.to; //(<HTMLInputElement>document.getElementById('to')).value;
     if (!!p1 && !!p2) {
       return new google.maps.DistanceMatrixService().getDistanceMatrix(
         {
@@ -153,7 +136,7 @@ export class HomeComponent implements OnInit {
           this.durationText = results.rows[0].elements[0].duration.text;
           this.durationValue = results.rows[0].elements[0].duration.value;
 
-          if ((this.DistanceValue / 1000) < 20) {
+          if (this.DistanceValue / 1000 < 20) {
             // console.log('from if' , this.DistanceValue);
             this.estimatedPrice = (this.DistanceValue / 1000) * 2.5;
           } else {
@@ -165,13 +148,11 @@ export class HomeComponent implements OnInit {
     }
   }
 
-
-  getFrom(place: object) { 
+  getFrom(place: object) {
     this.from = place['formatted_address'];
   }
 
-
-  getTo(place: object) { 
+  getTo(place: object) {
     this.to = place['formatted_address'];
   }
 }

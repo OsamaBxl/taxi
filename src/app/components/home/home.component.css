@@ -71,6 +71,16 @@ fa-icon {
   padding-left: 0;
 }
 
+.whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999999;
+}
+.whatsapp img {
+  box-shadow: 1px 3px 5px grey;
+}
+
 /* Media Query */
 
 @media only screen and (max-width: 1000px) {
