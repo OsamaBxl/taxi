@@ -16,7 +16,7 @@ import {} from 'googlemaps';
     <input
       class="input"
       type="text"
-      [(ngModel)]="autocompleteInput"
+      [(ngModel)]="autocompleteInput" [ngModelOptions]="{standalone: true}"
       #addresstext
       style="padding: 8px 20px; border: 1px solid #ccc; width: 100%; min-width:200px"
     />

@@ -44,8 +44,8 @@ export class HomeComponent implements OnInit {
     otherAddressDrop: new FormControl(null),
     vol: new FormControl(null),
     seigeEnfant: new FormControl(null),
-    from: new FormControl(null, [Validators.required]),
-    to: new FormControl(null, [Validators.required]),
+    from: new FormControl(null),
+    to: new FormControl(null),
     suitecase: new FormControl(null, [Validators.required]),
     persons: new FormControl(null, [Validators.required]),
     choiceTaxi: new FormControl(null, [Validators.required]),
@@ -89,8 +89,8 @@ export class HomeComponent implements OnInit {
         seigeEnfant: this.formValidate.get(['seigeEnfant'])?.value,
         vol: this.formValidate.get(['vol'])?.value,
         time: this.formValidate.get(['time'])?.value,
-        from: this.formValidate.get(['from'])?.value,
-        to: this.formValidate.get(['to'])?.value,
+        from:  this.from,
+        to:  this.to,
         suitecaseNum: this.formValidate.get(['suitecase'])?.value,
         additionalInfo: this.formValidate.get(['additionalInfo'])?.value,
         estimation: this.estimationCost,
@@ -103,6 +103,9 @@ export class HomeComponent implements OnInit {
         console.log(data);
         this.formValidate.reset();
       });
+    }else{
+      console.log('Form Not Valid');
+      this.formValidate.hasError
     }
   }
 
