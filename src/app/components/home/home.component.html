@@ -85,9 +85,10 @@
                                     distance</button> -->
                                 <div class="finalPrice" *ngIf="!!estimatedPrice">
                                     <p class="bg-white rounded p-4 mt-2">
-                                        Distance {{DistanceText}}<br>
-                                        Estimated Time {{durationText}}<br>
-                                        Estimated Price {{estimatedPrice | number : '1.0-0'}} EUR
+                                        <b class="text-primary">Distance:</b> {{DistanceText}}<br>
+                                        <b class="text-primary">Estimated Time:</b> {{durationText}}<br>
+                                        <b class="text-primary">Estimated Price:</b> {{estimatedPrice | number :
+                                        '1.0-0'}} EUR
                                     </p>
                                 </div>
 
