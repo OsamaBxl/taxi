@@ -93,7 +93,7 @@ export class HomeComponent implements OnInit {
         to:  this.to,
         suitecaseNum: this.formValidate.get(['suitecase'])?.value,
         additionalInfo: this.formValidate.get(['additionalInfo'])?.value,
-        estimation: this.estimatedPrice ? this.estimatedPrice : 0,
+        estimation: this.estimatedPrice ? Math.round(this.estimatedPrice) : 0,
         otherAddressDrop: this.formValidate.get(['otherAddressDrop'])?.value,
         otherAddressPick: this.formValidate.get(['otherAddressPick'])?.value,
         payment: this.formValidate.get(['payment'])?.value,
@@ -153,9 +153,11 @@ export class HomeComponent implements OnInit {
 
   getFrom(place: object) {
     this.from = place['formatted_address'];
+    this.getDistance();
   }
 
   getTo(place: object) {
     this.to = place['formatted_address'];
+    this.getDistance();
   }
 }
