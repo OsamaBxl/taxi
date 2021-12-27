@@ -44,8 +44,8 @@ export class HomeComponent implements OnInit {
     otherAddressDrop: new FormControl(null),
     vol: new FormControl(null),
     seigeEnfant: new FormControl(null),
-    from: new FormControl(null),
-    to: new FormControl(null),
+    from: new FormControl(null, [Validators.required]),
+    to: new FormControl(null, [Validators.required]),
     suitecase: new FormControl(null, [Validators.required]),
     persons: new FormControl(null, [Validators.required]),
     choiceTaxi: new FormControl(null, [Validators.required]),
@@ -63,12 +63,7 @@ export class HomeComponent implements OnInit {
   to: string;
   constructor(private validateBooking: ValidateBookingService) {}
 
-  ngOnInit(): void {
-    // this.validateBooking.getplaces().subscribe((places) => {
-    //   // console.log(places);
-    //   this.myPlaces = places.data;
-    // });
-  }
+  ngOnInit(): void {}
 
   onFormSubmit() {
     if (this.formValidate.valid) {
@@ -98,13 +93,11 @@ export class HomeComponent implements OnInit {
         otherAddressPick: this.formValidate.get(['otherAddressPick'])?.value,
         payment: this.formValidate.get(['payment'])?.value,
       };
-      console.log(newBooking);
+
       this.validateBooking.createBooking(newBooking).subscribe((data) => {
-        console.log(data);
         this.formValidate.reset();
       });
     } else {
-      console.log('Form Not Valid');
       this.formValidate.hasError;
     }
   }

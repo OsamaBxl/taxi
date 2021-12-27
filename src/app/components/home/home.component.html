@@ -65,25 +65,32 @@
                                 <label for="from">From</label>
                                 <app-google-places (setAddress)="getFrom($event)" adressType="geocode">
                                 </app-google-places>
+                                <!-- <div *ngIf="formValidate.get('from')?.errors && formValidate.dirty">
+                                    <div class="text-danger" *ngIf="formValidate.get('from')?.errors?.['required']">
+                                        Field is required
+                                    </div>
+                                </div> -->
 
 
                                 <label for="from">To</label>
                                 <app-google-places (setAddress)="getTo($event)" adressType="geocode">
                                 </app-google-places>
-
-                                <button type="button" class="btn btn-success mt-2" (click)="getDistance()"> Calculate
-                                    distance</button>
-                                <div class="finalPrice" *ngIf="!!estimatedPrice">
-                                    <p>Distance {{DistanceText}}</p>
-                                    <p>Estimated Time {{durationText}}</p>
-                                    <p>Estimated Price {{estimatedPrice | number : '1.0-0'}} EUR</p>
-                                </div>
-                                <div class="mapDirection">
-                                    <div id="googleMap" class="d-none"></div>
-                                    <div id="output">
-
+                                <!-- <div *ngIf="formValidate.get('to')?.errors && formValidate.dirty">
+                                    <div class="text-danger" *ngIf="formValidate.get('to')?.errors?.['required']">
+                                        Field is required
                                     </div>
+                                </div> -->
+
+                                <!-- <button type="button" class="btn btn-success mt-2" (click)="getDistance()"> Calculate
+                                    distance</button> -->
+                                <div class="finalPrice" *ngIf="!!estimatedPrice">
+                                    <p class="bg-white rounded p-4 mt-2">
+                                        Distance {{DistanceText}}<br>
+                                        Estimated Time {{durationText}}<br>
+                                        Estimated Price {{estimatedPrice | number : '1.0-0'}} EUR
+                                    </p>
                                 </div>
+
                             </div>
 
 
@@ -187,7 +194,7 @@
                                     [ngClass]="{'is-invalid': formValidate.get('email')?.errors && formValidate.get('email')?.touched }">
                                 <div *ngIf="formValidate.get('email')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('email')?.errors?.['required']">
-                                        Name is required
+                                        Email address is required
                                     </div>
 
                                     <div class="text-danger" *ngIf="formValidate.get('email')?.errors?.['email']">
@@ -259,8 +266,7 @@
 
 
                                 <!-- Payment proccess -->
-                                <div class="payment-proccess"
-                                    [ngClass]="{'d-none': formValidate.value.payment === 'cash'}">
+                                <div class="payment-proccess" [ngClass]="{'d-none': formValidate}">
                                     <div class="card">
                                         <div class="card-header">
                                             <h5 class="card-title">Make a payment</h5>

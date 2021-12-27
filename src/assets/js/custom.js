@@ -4,6 +4,4 @@ function deleteZeroFromPhone(code, number) {
   if (phoneNumber.zeroPosition == "0") {
     phoneNumber.replace(zeroPosition, "");
   }
-
-  return console.log(phoneNumber);
 }
