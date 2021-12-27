@@ -26,8 +26,17 @@
 <section class="home-reserve">
     <div class="home-reserve-container">
         <div class="container">
+            <!-- Marquee  -->
+
+
+
             <div class="home-reservation-container pb-5 px-2">
                 <h2 class="title">{{ "HOME_TITLE_RESERVATION" | translate}}</h2>
+                <div class="marquee">
+                    <div>
+                        <h5 class="text-success mb-3">Annulation gratuite</h5>
+                    </div>
+                </div>
 
                 <form [formGroup]="formValidate" (ngSubmit)="onFormSubmit()">
                     <div class="row">
