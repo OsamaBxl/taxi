@@ -89,8 +89,8 @@ export class HomeComponent implements OnInit {
         seigeEnfant: this.formValidate.get(['seigeEnfant'])?.value,
         vol: this.formValidate.get(['vol'])?.value,
         time: this.formValidate.get(['time'])?.value,
-        from:  this.from,
-        to:  this.to,
+        from: this.from,
+        to: this.to,
         suitecaseNum: this.formValidate.get(['suitecase'])?.value,
         additionalInfo: this.formValidate.get(['additionalInfo'])?.value,
         estimation: this.estimatedPrice ? this.estimatedPrice : 0,
@@ -103,9 +103,9 @@ export class HomeComponent implements OnInit {
         console.log(data);
         this.formValidate.reset();
       });
-    }else{
+    } else {
       console.log('Form Not Valid');
-      this.formValidate.hasError
+      this.formValidate.hasError;
     }
   }
 
