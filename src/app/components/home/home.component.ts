@@ -44,8 +44,8 @@ export class HomeComponent implements OnInit {
     phoneCode: new FormControl(null, [Validators.required]),
     vol: new FormControl(null),
     seigeEnfant: new FormControl(null),
-    from: new FormControl(null, [Validators.required]),
-    to: new FormControl(null, [Validators.required]),
+    from: new FormControl(null),
+    to: new FormControl(null),
     suitecase: new FormControl(null, [Validators.required]),
     persons: new FormControl(null, [Validators.required]),
     choiceTaxi: new FormControl(null, [Validators.required]),
@@ -94,6 +94,13 @@ export class HomeComponent implements OnInit {
 
       this.validateBooking.createBooking(newBooking).subscribe((data) => {
         this.formValidate.reset();
+        this.from = '';
+        this.to = '';
+        this.DistanceText = '';
+        this.DistanceValue = 0;
+        this.durationText = '';
+        this.durationValue = 0;
+        this.estimatedPrice = 0;
       });
     } else {
       this.formValidate.hasError;
