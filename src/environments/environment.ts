@@ -2,17 +2,17 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-// export const environment = {
-//   production: false,
-//   apiUrl: 'http://localhost:8000/api',
-//   GoogleapiKey: 'AIzaSyCwG3GsvVEwoGTqT-62vMSunbmBg_hEniY',
-// };
-
 export const environment = {
-  production: true,
-  apiUrl: 'https://airportcab.be/back/api',
+  production: false,
+  apiUrl: 'http://localhost:8000/api',
   GoogleapiKey: 'AIzaSyCwG3GsvVEwoGTqT-62vMSunbmBg_hEniY',
 };
+
+// export const environment = {
+//   production: true,
+//   apiUrl: 'https://airportcab.be/back/api',
+//   GoogleapiKey: 'AIzaSyCwG3GsvVEwoGTqT-62vMSunbmBg_hEniY',
+// };
 
 /*
  * For easier debugging in development mode, you can import the following file
