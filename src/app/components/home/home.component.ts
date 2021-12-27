@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
 
   myPlaces = [];
   estimationCost: number = 0;
+
   //Form validation
   formValidate = new FormGroup({
     fullName: new FormControl(null, [
@@ -36,12 +37,11 @@ export class HomeComponent implements OnInit {
     ]),
     phoneNumber: new FormControl(null, [
       Validators.required,
-      Validators.minLength(9),
+      Validators.minLength(8),
+      Validators.maxLength(11),
     ]),
     email: new FormControl(null, [Validators.required, Validators.email]),
     phoneCode: new FormControl(null, [Validators.required]),
-    otherAddressPick: new FormControl(null),
-    otherAddressDrop: new FormControl(null),
     vol: new FormControl(null),
     seigeEnfant: new FormControl(null),
     from: new FormControl(null, [Validators.required]),
@@ -89,8 +89,6 @@ export class HomeComponent implements OnInit {
         suitecaseNum: this.formValidate.get(['suitecase'])?.value,
         additionalInfo: this.formValidate.get(['additionalInfo'])?.value,
         estimation: this.estimatedPrice ? Math.round(this.estimatedPrice) : 0,
-        otherAddressDrop: this.formValidate.get(['otherAddressDrop'])?.value,
-        otherAddressPick: this.formValidate.get(['otherAddressPick'])?.value,
         payment: this.formValidate.get(['payment'])?.value,
       };
 
