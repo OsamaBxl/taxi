@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NotificationService } from 'src/app/services/notification.service';
 import { SendEmailService } from 'src/app/services/send-email.service';
+import { SnackBarState } from '../snackbar/snackbar.component';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +12,8 @@ import { SendEmailService } from 'src/app/services/send-email.service';
 export class ContactComponent implements OnInit {
   contactUsForm: FormGroup;
 
-  constructor(private sendMessage: SendEmailService) {}
+  constructor(private sendMessage: SendEmailService,
+              private _notify:NotificationService) {}
 
   ngOnInit(): void {
     this.contactUsForm = new FormGroup({
@@ -33,7 +36,8 @@ export class ContactComponent implements OnInit {
       };
       this.sendMessage.sendEmail(message).subscribe(() => {
         this.contactUsForm.reset();
-      });
+        this._notify.openSnackbar('Success' , SnackBarState.Success , 5000)
+      },err=>this._notify.openSnackbar('Error' , SnackBarState.Error , 5000));
     }
   }
 }

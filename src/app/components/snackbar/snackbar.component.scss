@@ -1,0 +1,36 @@
+.snackbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    .mat-icon {
+        vertical-align: baseline;
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        margin-inline-start: 24px;
+        margin-inline-end: 24px;
+        // color: white;
+        &.warning {
+            color: #FF9800;
+        }
+        &.info {
+            color: white;
+        }
+        &.success {
+            color: #009688;
+        }
+        &.error {
+            color: #F44336;
+        }
+    }
+    p {
+        vertical-align: baseline;
+        display: inline-block;
+        text-align: center;
+        color: #dadada;
+        margin: 0;
+    }
+}

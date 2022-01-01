@@ -17,6 +17,11 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GooglePlacesComponent } from './components/google-places/google-places.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -30,9 +35,11 @@ import { GooglePlacesComponent } from './components/google-places/google-places.
     NavbarComponent,
     FooterComponent,
     GooglePlacesComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     FontAwesomeModule,
@@ -46,6 +53,9 @@ import { GooglePlacesComponent } from './components/google-places/google-places.
         deps: [HttpClient],
       },
     }),
+    MatIconModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

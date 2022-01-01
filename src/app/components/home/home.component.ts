@@ -7,6 +7,8 @@ import { faCcVisa } from '@fortawesome/free-brands-svg-icons';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidateBookingService } from 'src/app/services/validate-booking.service';
 import { BOOkingData } from 'src/app/interfaces/booking-data';
+import { NotificationService } from 'src/app/services/notification.service';
+import { SnackBarState } from '../snackbar/snackbar.component';
 
 @Component({
   selector: 'app-home',
@@ -62,7 +64,8 @@ export class HomeComponent implements OnInit {
   estimatedPrice: number;
   from: string;
   to: string;
-  constructor(private validateBooking: ValidateBookingService) {}
+  constructor(private validateBooking: ValidateBookingService,
+              private _notify:NotificationService) {}
 
   ngOnInit(): void {}
 
@@ -94,9 +97,11 @@ export class HomeComponent implements OnInit {
       };
       this.validateBooking.createBooking(newBooking).subscribe((data) => {
         window.location.href = data.url;
+        this._notify.openSnackbar('Success' , SnackBarState.Success , 3000)
       });
     } else {
       this.formValidate.hasError;
+      this._notify.openSnackbar('Error' , SnackBarState.Error , 3000)
     }
   }
 

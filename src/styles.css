@@ -42,3 +42,6 @@ p {
 .whatsapp img {
   box-shadow: 1px 3px 5px grey;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
