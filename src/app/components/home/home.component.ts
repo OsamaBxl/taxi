@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   seigeEnfant = 'no';
   phoneCode = '+32';
   payment = 'cash';
+  vol: 0;
   faHandHoldingUsd = faHandHoldingUsd;
   faSmileBeam = faSmileBeam;
   faVirus = faVirusSlash;
@@ -50,7 +51,7 @@ export class HomeComponent implements OnInit {
     persons: new FormControl(null, [Validators.required]),
     choiceTaxi: new FormControl(null, [Validators.required]),
     time: new FormControl(null, [Validators.required]),
-    payment: new FormControl(null, [Validators.required]),
+    payment: new FormControl(null),
     additionalInfo: new FormControl(null),
   });
 
@@ -91,16 +92,8 @@ export class HomeComponent implements OnInit {
         estimation: this.estimatedPrice ? Math.round(this.estimatedPrice) : 0,
         payment: this.formValidate.get(['payment'])?.value,
       };
-
       this.validateBooking.createBooking(newBooking).subscribe((data) => {
-        this.formValidate.reset();
-        this.from = '';
-        this.to = '';
-        this.DistanceText = '';
-        this.DistanceValue = 0;
-        this.durationText = '';
-        this.durationValue = 0;
-        this.estimatedPrice = 0;
+        window.location.href = data.url;
       });
     } else {
       this.formValidate.hasError;

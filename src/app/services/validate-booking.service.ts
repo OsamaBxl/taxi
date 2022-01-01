@@ -13,7 +13,12 @@ export class ValidateBookingService {
   constructor(private http: HttpClient) {}
 
   createBooking(newBooking: BOOkingData): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/createBooking`, newBooking);
+    let response = this.http.post(
+      `${environment.apiUrl}/createBooking`,
+      newBooking
+    );
+
+    return response;
   }
 
   getPrice(p1: string, p2: string): Observable<any> {

@@ -2,11 +2,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <img src="/assets/images/logo-airport-cab.png" alt="logo airport cab" width="150">
+
+                <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                    <img src="/assets/images/logo-airport-cab.png" alt="logo airport cab" width="150">
+                </a>
             </div>
             <div class="col-md-6 text-center phones">
-                <span class="me-2 phone fw-bold">+32 499 499 455 </span> | <span class="ms-2 phone fw-bold">+32 487 688
-                    355</span>
+                <span class="me-2 phone fw-bold">+32 484 76 85 00 </span> | <span class="ms-2 phone fw-bold">+32 475 75
+                    56 99</span>
             </div>
 
             <div class="col-md-3 mt-3 text-center">
@@ -49,16 +52,17 @@
                 </ul>
             </div>
             <div class="col-md-3 text-center languages mb-2">
-                <span class="lang" (click)="changeCurrentLang('en')">
-                    <img src="/assets/images/flags/United-Kingdom-Flag-icon.png" alt="english uk flag" title="EN"
-                        width="25">
+                <span class="lang img-shadow" (click)="changeCurrentLang('en')">
+                    <img src="/assets/images/flags/United-Kingdom-Flag-icon.png" class="" alt="english uk flag"
+                        title="EN" width="25">
                 </span>
 
-                <span class="lang" (click)="changeCurrentLang('fr')">
-                    <img src="/assets/images/flags/France-Flag-icon.png" alt="france uk flag" title="FR" width="25">
+                <span class="lang img-shadow" (click)="changeCurrentLang('fr')">
+                    <img src="/assets/images/flags/France-Flag-icon.png" class="" alt="france uk flag" title="FR"
+                        width="25">
                 </span>
-                <span class="lang" (click)="changeCurrentLang('nl')">
-                    <img src="/assets/images/flags/Netherlands-Flag-icon.png" alt="netherlands flag" title="NL"
+                <span class="lang img-shadow" (click)="changeCurrentLang('nl')">
+                    <img src="/assets/images/flags/Netherlands-Flag-icon.png" class="" alt="netherlands flag" title="NL"
                         width="25">
                 </span>
 

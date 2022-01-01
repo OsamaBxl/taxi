@@ -31,7 +31,9 @@ export class ContactComponent implements OnInit {
         subject: this.contactUsForm.get(['subject'])?.value,
         message: this.contactUsForm.get(['message'])?.value,
       };
-      this.sendMessage.sendEmail(message).subscribe();
+      this.sendMessage.sendEmail(message).subscribe(() => {
+        this.contactUsForm.reset();
+      });
     }
   }
 }
