@@ -23,7 +23,7 @@ export class NotificationService {
       panelClass: ['blue-snackbar'],
       data: data,
       horizontalPosition: 'center',
-      verticalPosition: 'bottom',
+      verticalPosition: 'top',
       direction: 'ltr',
       politeness: 'assertive',
     });

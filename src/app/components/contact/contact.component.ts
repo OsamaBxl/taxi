@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { NotificationService } from 'src/app/services/notification.service';
 import { SendEmailService } from 'src/app/services/send-email.service';
 import { SnackBarState } from '../snackbar/snackbar.component';
@@ -13,7 +14,8 @@ export class ContactComponent implements OnInit {
   contactUsForm: FormGroup;
 
   constructor(private sendMessage: SendEmailService,
-              private _notify:NotificationService) {}
+              private _notify:NotificationService,
+              private translate: TranslateService) {}
 
   ngOnInit(): void {
     this.contactUsForm = new FormGroup({
@@ -36,8 +38,34 @@ export class ContactComponent implements OnInit {
       };
       this.sendMessage.sendEmail(message).subscribe(() => {
         this.contactUsForm.reset();
-        this._notify.openSnackbar('Success' , SnackBarState.Success , 5000)
-      },err=>this._notify.openSnackbar('Error' , SnackBarState.Error , 5000));
+        if(localStorage.getItem('currentLang') == 'en'){
+          this.translate.use('en').subscribe((data)=>{
+            this._notify.openSnackbar(data.SUCCESS , SnackBarState.Success , 5000)
+          })
+        }else if(localStorage.getItem('currentLang') == 'fr'){
+          this.translate.use('fr').subscribe((data)=>{
+            this._notify.openSnackbar(data.SUCCESS , SnackBarState.Success , 5000)
+          })
+        }else if(localStorage.getItem('currentLang') == 'nl'){
+          this.translate.use('nl').subscribe((data)=>{
+            this._notify.openSnackbar(data.SUCCESS , SnackBarState.Success , 5000)
+          })
+        }
+      },err=>{
+        if(localStorage.getItem('currentLang') == 'en'){
+          this.translate.use('en').subscribe((data)=>{
+            this._notify.openSnackbar(data.ERROR , SnackBarState.Success , 5000)
+          })
+        }else if(localStorage.getItem('currentLang') == 'fr'){
+          this.translate.use('fr').subscribe((data)=>{
+            this._notify.openSnackbar(data.ERROR , SnackBarState.Success , 5000)
+          })
+        }else if(localStorage.getItem('currentLang') == 'nl'){
+          this.translate.use('nl').subscribe((data)=>{
+            this._notify.openSnackbar(data.ERROR , SnackBarState.Success , 5000)
+          })
+        }
+      });
     }
   }
 }
