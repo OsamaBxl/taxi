@@ -7,6 +7,8 @@ import { faCcVisa } from '@fortawesome/free-brands-svg-icons';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidateBookingService } from 'src/app/services/validate-booking.service';
 import { BOOkingData } from 'src/app/interfaces/booking-data';
+import { NotificationService } from 'src/app/services/notification.service';
+import { SnackBarState } from '../snackbar/snackbar.component';
 
 @Component({
   selector: 'app-reservation',
@@ -20,6 +22,7 @@ export class ReservationComponent implements OnInit {
   seigeEnfant = 'no';
   phoneCode = '+32';
   payment = 'cash';
+  vol: 0;
   faHandHoldingUsd = faHandHoldingUsd;
   faSmileBeam = faSmileBeam;
   faVirus = faVirusSlash;
@@ -28,6 +31,7 @@ export class ReservationComponent implements OnInit {
 
   myPlaces = [];
   estimationCost: number = 0;
+
   //Form validation
   formValidate = new FormGroup({
     fullName: new FormControl(null, [
@@ -36,19 +40,20 @@ export class ReservationComponent implements OnInit {
     ]),
     phoneNumber: new FormControl(null, [
       Validators.required,
-      Validators.minLength(9),
+      Validators.minLength(8),
+      Validators.maxLength(11),
     ]),
     email: new FormControl(null, [Validators.required, Validators.email]),
     phoneCode: new FormControl(null, [Validators.required]),
     vol: new FormControl(null),
     seigeEnfant: new FormControl(null),
-    from: new FormControl(null, [Validators.required]),
-    to: new FormControl(null, [Validators.required]),
+    from: new FormControl(null),
+    to: new FormControl(null),
     suitecase: new FormControl(null, [Validators.required]),
     persons: new FormControl(null, [Validators.required]),
     choiceTaxi: new FormControl(null, [Validators.required]),
     time: new FormControl(null, [Validators.required]),
-    payment: new FormControl(null, [Validators.required]),
+    payment: new FormControl(null),
     additionalInfo: new FormControl(null),
   });
 
@@ -59,7 +64,10 @@ export class ReservationComponent implements OnInit {
   estimatedPrice: number;
   from: string;
   to: string;
-  constructor(private validateBooking: ValidateBookingService) {}
+  constructor(
+    private validateBooking: ValidateBookingService,
+    private _notify: NotificationService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -89,12 +97,13 @@ export class ReservationComponent implements OnInit {
         estimation: this.estimatedPrice ? Math.round(this.estimatedPrice) : 0,
         payment: this.formValidate.get(['payment'])?.value,
       };
-
       this.validateBooking.createBooking(newBooking).subscribe((data) => {
-        this.formValidate.reset();
+        window.location.href = data.url;
+        this._notify.openSnackbar('Success', SnackBarState.Success, 3000);
       });
     } else {
       this.formValidate.hasError;
+      this._notify.openSnackbar('Error', SnackBarState.Error, 3000);
     }
   }
 

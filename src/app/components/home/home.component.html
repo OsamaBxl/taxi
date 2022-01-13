@@ -43,12 +43,14 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group mt-3">
                                 <label>{{ 'Home_RESERVE_NOM' | translate}}</label> <span class="text-danger"> *</span>
-                                <input type="text" formControlName="fullName" class="form-control" [ngClass]="{'is-invalid': formValidate.get('fullName')?.errors && formValidate.get('fullName')?.touched }">
+                                <input type="text" formControlName="fullName" class="form-control"
+                                    [ngClass]="{'is-invalid': formValidate.get('fullName')?.errors && formValidate.get('fullName')?.touched }">
                                 <!-- Full name Validation -->
                                 <div *ngIf="formValidate.get('fullName')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('fullName')?.errors?.['required']">
                                         Name is required</div>
-                                    <div class="text-danger" *ngIf="formValidate.get('fullName')?.errors?.['minlength']">
+                                    <div class="text-danger"
+                                        *ngIf="formValidate.get('fullName')?.errors?.['minlength']">
                                         Minimum length is 3 characters
                                     </div>
                                 </div>
@@ -61,7 +63,8 @@
                                     <option value="vip">VIP</option>
                                 </select>
                                 <div *ngIf="formValidate.get('choiceTaxi')?.errors && formValidate.dirty">
-                                    <div class="text-danger" *ngIf="formValidate.get('choiceTaxi')?.errors?.['required']">
+                                    <div class="text-danger"
+                                        *ngIf="formValidate.get('choiceTaxi')?.errors?.['required']">
                                         Field is required
                                     </div>
                                 </div>
@@ -121,7 +124,8 @@
                                 <div class="phone">
                                     <div class="row">
                                         <div class="col-4">
-                                            <select [(ngModel)]="phoneCode" formControlName="phoneCode" class="form-select">
+                                            <select [(ngModel)]="phoneCode" formControlName="phoneCode"
+                                                class="form-select">
                                                 <option value="+31">+31</option>
                                                 <option value="+32">+32</option>
                                                 <option value="+33">+33</option>
@@ -134,19 +138,24 @@
                                         </div>
 
                                         <div class="col-8 phone-padding">
-                                            <input formControlName="phoneNumber" type="text" class="form-control is-invalid" placeholder="ex: 472958521" [ngClass]="{'is-invalid': formValidate.get('phoneNumber')?.errors && formValidate.get('phoneNumber')?.touched }">
+                                            <input formControlName="phoneNumber" type="text"
+                                                class="form-control is-invalid" placeholder="ex: 472958521"
+                                                [ngClass]="{'is-invalid': formValidate.get('phoneNumber')?.errors && formValidate.get('phoneNumber')?.touched }">
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Validate Phone -->
                                 <div *ngIf="formValidate.get('phoneNumber')?.errors && formValidate.dirty">
-                                    <div class="text-danger" *ngIf="formValidate.get('phoneNumber')?.errors?.['required']">
+                                    <div class="text-danger"
+                                        *ngIf="formValidate.get('phoneNumber')?.errors?.['required']">
                                         Phone number is required
                                     </div>
-                                    <div class="text-danger" *ngIf="formValidate.get('phoneNumber')?.errors?.['minlength']">
+                                    <div class="text-danger"
+                                        *ngIf="formValidate.get('phoneNumber')?.errors?.['minlength']">
                                         Phone number is not valid
                                     </div>
-                                    <div class="text-danger" *ngIf="formValidate.get('phoneNumber')?.errors?.['maxlength']">
+                                    <div class="text-danger"
+                                        *ngIf="formValidate.get('phoneNumber')?.errors?.['maxlength']">
                                         Phone number is too long
                                     </div>
                                 </div>
@@ -156,7 +165,8 @@
                             <div>
                                 <label class="mt-3">{{ 'Home_RESERVE_PERSONNES' | translate}}</label>
                                 <span class="text-danger"> *</span>
-                                <select formControlName="persons" class="form-select" [ngClass]="{'is-invalid': formValidate.get('persons')?.errors && formValidate.get('persons')?.touched }">
+                                <select formControlName="persons" class="form-select"
+                                    [ngClass]="{'is-invalid': formValidate.get('persons')?.errors && formValidate.get('persons')?.touched }">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -171,7 +181,8 @@
                             </div>
                             <div>
                                 <label class="mt-3">{{ 'Home_RESERVE_SIEGE_ENFANT' | translate}}</label>
-                                <select formControlName="seigeEnfant" class="form-select" [(ngModel)]="seigeEnfant" [ngClass]="{'is-invalid': formValidate.get('seigeEnfant')?.errors && formValidate.get('seigeEnfant')?.touched }">
+                                <select formControlName="seigeEnfant" class="form-select" [(ngModel)]="seigeEnfant"
+                                    [ngClass]="{'is-invalid': formValidate.get('seigeEnfant')?.errors && formValidate.get('seigeEnfant')?.touched }">
                                     <option value="no">No</option>
                                     <option value="yes">Yes</option>
                                 </select>
@@ -190,7 +201,8 @@
                             <div>
                                 <label class="mt-3">E-mail</label>
                                 <span class="text-danger"> *</span>
-                                <input formControlName="email" type="text" placeholder="E-mail" class="form-control" [ngClass]="{'is-invalid': formValidate.get('email')?.errors && formValidate.get('email')?.touched }">
+                                <input formControlName="email" type="text" placeholder="E-mail" class="form-control"
+                                    [ngClass]="{'is-invalid': formValidate.get('email')?.errors && formValidate.get('email')?.touched }">
                                 <div *ngIf="formValidate.get('email')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('email')?.errors?.['required']">
                                         Email address is required
@@ -205,7 +217,9 @@
                             <div>
                                 <label class="mt-3">{{ 'Home_RESERVE_DATE' | translate}}</label>
                                 <span class="text-danger"> *</span>
-                                <input formControlName="time" type="datetime-local" class="form-control" name="reservationDate" [ngClass]="{'is-invalid': formValidate.get('time')?.errors && formValidate.get('time')?.touched }">
+                                <input formControlName="time" type="datetime-local" class="form-control"
+                                    name="reservationDate"
+                                    [ngClass]="{'is-invalid': formValidate.get('time')?.errors && formValidate.get('time')?.touched }">
 
                                 <div *ngIf="formValidate.get('time')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('time')?.errors?.['required']">
@@ -217,7 +231,8 @@
                             <div>
                                 <label class="mt-3">{{ 'Home_RESERVE_VALISE' | translate}}</label>
                                 <span class="text-danger"> *</span>
-                                <select formControlName="suitecase" class="form-select" [ngClass]="{'is-invalid': formValidate.get('suitecase')?.errors && formValidate.get('suitecase')?.touched }">
+                                <select formControlName="suitecase" class="form-select"
+                                    [ngClass]="{'is-invalid': formValidate.get('suitecase')?.errors && formValidate.get('suitecase')?.touched }">
                                     <option value="1">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -226,7 +241,8 @@
                                     <option value="5">5</option>
                                 </select>
                                 <div *ngIf="formValidate.get('suitecase')?.errors && formValidate.dirty">
-                                    <div class="text-danger" *ngIf="formValidate.get('suitecase')?.errors?.['required']">
+                                    <div class="text-danger"
+                                        *ngIf="formValidate.get('suitecase')?.errors?.['required']">
                                         Field is required
                                     </div>
                                 </div>
@@ -246,13 +262,14 @@
 
 
                                 <br>
-                                <p class=" border border-primary bg-white rounded p-3" style="max-width: 400px;">
-                                    <small class="text-primary">
-                                        La réservation est confirmée avec un acompte de 25% de la somme totale, tandis
-                                        que
-                                        le montant restant est payé directement au chauffeur en espèces
-                                        le jour du transfer.
-                                    </small>
+                                <p class=" border border-primary bg-white rounded p-3 text-primary mt-3"
+                                    style="max-width: 400px;">
+
+                                    La réservation est confirmée avec un acompte de 25% de la somme totale, tandis
+                                    que
+                                    le montant restant est payé directement au chauffeur en espèces
+                                    le jour du transfer.
+
                                 </p>
 
 
@@ -266,10 +283,10 @@
                     </div>
 
                     <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-primary" [disabled]="!formValidate.valid || !from || !to ">{{
+                        <button type="submit" class="btn btn-primary"
+                            [disabled]="!formValidate.valid || !from || !to ">{{
                             'Home_RESERVE_BTN' | translate}}</button>
                     </div>
-                    {{ formValidate.value | json }}
 
                 </form>
 

@@ -64,8 +64,10 @@ export class HomeComponent implements OnInit {
   estimatedPrice: number;
   from: string;
   to: string;
-  constructor(private validateBooking: ValidateBookingService,
-              private _notify:NotificationService) {}
+  constructor(
+    private validateBooking: ValidateBookingService,
+    private _notify: NotificationService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -97,11 +99,11 @@ export class HomeComponent implements OnInit {
       };
       this.validateBooking.createBooking(newBooking).subscribe((data) => {
         window.location.href = data.url;
-        this._notify.openSnackbar('Success' , SnackBarState.Success , 3000)
+        this._notify.openSnackbar('Success', SnackBarState.Success, 3000);
       });
     } else {
       this.formValidate.hasError;
-      this._notify.openSnackbar('Error' , SnackBarState.Error , 3000)
+      this._notify.openSnackbar('Error', SnackBarState.Error, 3000);
     }
   }
 

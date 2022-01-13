@@ -1,8 +1,17 @@
 <section class="home-reserve">
     <div class="home-reserve-container">
         <div class="container">
+            <!-- Marquee  -->
+
+
+
             <div class="home-reservation-container pb-5 px-2">
                 <h2 class="title">{{ "HOME_TITLE_RESERVATION" | translate}}</h2>
+                <div class="marquee">
+                    <div>
+                        <h5 class="text-success mb-3">Annulation gratuite</h5>
+                    </div>
+                </div>
 
                 <form [formGroup]="formValidate" (ngSubmit)="onFormSubmit()">
                     <div class="row">
@@ -37,33 +46,31 @@
                             </div>
 
                             <div class="form-group mt-3">
-                                <label for="from">From</label>
+                                <label for="from">{{ 'Home_RESERVE_RAMASSER' | translate}}</label>
+                                <span class="text-danger"> *</span>
                                 <app-google-places (setAddress)="getFrom($event)" adressType="geocode">
                                 </app-google-places>
-                                <!-- <div *ngIf="formValidate.get('from')?.errors && formValidate.dirty">
-                                    <div class="text-danger" *ngIf="formValidate.get('from')?.errors?.['required']">
-                                        Field is required
-                                    </div>
-                                </div> -->
 
-
-                                <label for="from">To</label>
+                                <label for="from" class="mt-2">{{ 'Home_RESERVE_DEPOSER' | translate}}</label>
+                                <span class="text-danger"> *</span>
                                 <app-google-places (setAddress)="getTo($event)" adressType="geocode">
                                 </app-google-places>
-                                <!-- <div *ngIf="formValidate.get('to')?.errors && formValidate.dirty">
-                                    <div class="text-danger" *ngIf="formValidate.get('to')?.errors?.['required']">
-                                        Field is required
-                                    </div>
-                                </div> -->
+
 
                                 <!-- <button type="button" class="btn btn-success mt-2" (click)="getDistance()"> Calculate
                                     distance</button> -->
                                 <div class="finalPrice" *ngIf="!!estimatedPrice">
-                                    <p class="bg-white rounded p-4 mt-2">
-                                        <b class="text-primary">Distance:</b> {{DistanceText}}<br>
-                                        <b class="text-primary">Estimated Time:</b> {{durationText}}<br>
-                                        <b class="text-primary">Estimated Price:</b> {{estimatedPrice | number :
-                                        '1.0-0'}} EUR
+                                    <p class="bg-white  border border-primary rounded p-3 mt-2">
+                                        <!-- <small class="text-primary">Distance:</small>
+                                        <small>{{DistanceText}}</small><br> -->
+                                        <!-- <small class="text-primary">Estimated Time:</small>
+                                        <small>{{durationText}}</small><br> -->
+                                        <small class="text-primary">Estimation:</small><small>{{estimatedPrice |
+                                            number :
+                                            '1.0-0'}} EUR</small> <br>
+                                        <small class="text-primary">Acompte à payer (25%): </small> <small>{{
+                                            estimatedPrice / 4 | number : '1.0-0'}} EUR</small>
+
                                     </p>
                                 </div>
 
@@ -122,6 +129,10 @@
                                         *ngIf="formValidate.get('phoneNumber')?.errors?.['minlength']">
                                         Phone number is not valid
                                     </div>
+                                    <div class="text-danger"
+                                        *ngIf="formValidate.get('phoneNumber')?.errors?.['maxlength']">
+                                        Phone number is too long
+                                    </div>
                                 </div>
 
                             </div>
@@ -144,8 +155,7 @@
                                 </div>
                             </div>
                             <div>
-                                <label class="mt-3">Siège Enfant</label>
-                                <span class="text-danger"> *</span>
+                                <label class="mt-3">{{ 'Home_RESERVE_SIEGE_ENFANT' | translate}}</label>
                                 <select formControlName="seigeEnfant" class="form-select" [(ngModel)]="seigeEnfant"
                                     [ngClass]="{'is-invalid': formValidate.get('seigeEnfant')?.errors && formValidate.get('seigeEnfant')?.touched }">
                                     <option value="no">No</option>
@@ -155,8 +165,8 @@
                             </div>
 
                             <div class="form-group mt-3">
-                                <label>Numéro du vol</label> <span class="text-danger"></span>
-                                <input type="text" formControlName="vol" class="form-control">
+                                <label>{{ 'Home_RESERVE_VOL' | translate}}</label> <span class="text-danger"></span>
+                                <input type="text" formControlName="vol" [(ngModel)]="vol" class="form-control">
                             </div>
 
 
@@ -180,7 +190,7 @@
                             </div>
 
                             <div>
-                                <label class="mt-3">Time</label>
+                                <label class="mt-3">{{ 'Home_RESERVE_DATE' | translate}}</label>
                                 <span class="text-danger"> *</span>
                                 <input formControlName="time" type="datetime-local" class="form-control"
                                     name="reservationDate"
@@ -222,82 +232,34 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="pay">
-                                <h6 class="my-3">{{ 'Home_RESERVE_MODE_PAY' | translate}}</h6>
-                                <div class="d-flex form-control">
-                                    <label class="form-check-label">
-                                        <input [(ngModel)]="payment" class="form-check-input" type="radio" value="cash"
-                                            name="payment" formControlName="payment">
-                                        {{ 'Home_RESERVE_MODE_CASH' | translate}}
-                                    </label> &nbsp; &nbsp;&nbsp;
+                                <label class="mt-3">{{ 'Home_RESERVE_MODE_PAY' | translate}}</label>
 
-                                    <label class="form-check-label">
-                                        <input [(ngModel)]="payment" class="form-check-input" type="radio" value="visa"
-                                            name="payment" formControlName="payment">
-                                        {{ 'Home_RESERVE_MODE_CARD' | translate}}
-                                    </label>
-                                </div>
 
 
                                 <br>
+                                <p class=" border border-primary bg-white rounded p-3 text-primary mt-3"
+                                    style="max-width: 400px;">
 
+                                    La réservation est confirmée avec un acompte de 25% de la somme totale, tandis
+                                    que
+                                    le montant restant est payé directement au chauffeur en espèces
+                                    le jour du transfer.
 
-                                <!-- Payment proccess -->
-                                <div class="payment-proccess" [ngClass]="{'d-none': formValidate}">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h5 class="card-title">Make a payment</h5>
-                                        </div>
-                                        <div class="card-body">
-                                            You will pay:
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col-9">
-                                                        <input type="number" disabled class="form-control pe-0"
-                                                            value="40">
-                                                    </div>
-                                                    <div class="col-3 ps-0">EUR</div>
-                                                </div>
-                                                <hr>
-                                                <div class="row">
-                                                    <p>Select the payment platform</p>
-                                                    <div class="payment-img">
-                                                        <div class="row">
-                                                            <div class="col-4">
-                                                                <img src="assets/images/payment/paypal-logo.png"
-                                                                    alt="paypal" class="img-fluid shadow" width="100"
-                                                                    style="cursor: pointer;">
-                                                            </div>
-                                                            <div class="col-4">
-                                                                <img src="assets/images/payment/visa-mastercard-logo.png"
-                                                                    alt="visa/mastercard" class="img-fluid shadow"
-                                                                    width="100" style="cursor: pointer;">
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                </p>
 
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <h6 class="my-3">{{ 'Home_RESERVE_INFO' | translate}}</h6>
+                            <label class="my-3">{{ 'Home_RESERVE_INFO' | translate}}</label>
                             <input type="text" class="form-control" formControlName="additionalInfo">
                         </div>
 
                     </div>
-                    <!-- <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-primary" [disabled]="formValidate.value.dropOff == '' || formValidate.value.pickUp == '' || formValidate.get('pickUp')?.untouched || formValidate.get('dropOff')?.untouched ">{{
-                            'Home_RESERVE_BTN' | translate}}</button>
-                    </div> -->
-                    <!-- <app-payment *ngIf="!!checkoutID" [checkoutID]="checkoutID"></app-payment> -->
+
                     <div class="text-center mt-4">
                         <button type="submit" class="btn btn-primary"
-                            [disabled]="!from || !to || !formValidate.get(['email'])?.value">{{
+                            [disabled]="!formValidate.valid || !from || !to ">{{
                             'Home_RESERVE_BTN' | translate}}</button>
                     </div>
 
