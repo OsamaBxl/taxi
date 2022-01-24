@@ -2,6 +2,9 @@
   "HOME": "ACCEUIL",
   "ABOUT": "A PROPOS",
   "RESERVATION": "RESERVATION",
+  "CONTACT_US_BTN": "Nous contacter",
+
+  "CANCEL_FREE": "Annulation gratuite",
   "HOME_CAPTION": "Vers tous les aéroports de l'Europe",
   "BTN_INFO": "Plus d'info",
   "BTN_RESERVE": "Réservation",
@@ -17,11 +20,11 @@
   "HOME_GUARANTY_PAR_3": "Tous nos véhicules taxis sont désinfectés après chaque trajet.",
   "HOME_GUARANTY_TITLE_4": "100% Confort",
   "HOME_GUARANTY_PAR_4": "Il suffit de se pencher en arrière et de profiter du voyage",
-  "HOME_VIP_PAR_1": " met à votre disposition des chauffeurs expérimentés et multilingues, tous professionnels d'un métier dont la courtoisie, la serviabilité, la ponctualité et la discrétion sont les fondements.",
-  "HOME_VIP_PAR_2": "Leur connaissance approfondie des réseaux routiers belges, hollandais, luxembourgeois, allemands et français vous permettra d'atteindre les destinations de votre choix dans les meilleures conditions de comfort et de temps.",
+  "HOME_VIP_PAR_1": " met à votre disposition des chauffeurs expérimentés et multilingues, tous professionnels d'un métier dont la courtoisie, la serviabilité, la ponctualité et la discrétion sont les fondements",
+  "HOME_VIP_PAR_2": "Leur connaissance approfondie des réseaux routiers belges, hollandais, luxembourgeois, allemands et français vous permettrons d'atteindre les destinations de votre choix dans les meilleures conditiont de confort et de temps.",
   "HOME_TITLE_RESERVATION": "RÉSERVATION RAPIDE",
   "Home_RESERVE_NOM": "Nom complet",
-  "Home_RESERVE_RAMASSER": "Adresse de ramassage",
+  "Home_RESERVE_RAMASSER": "Départ",
 
   "Home_RAMASSER_AUTRE": "Autre",
   "Home_RESERVE_DEPOSER": "Destination",
@@ -38,5 +41,14 @@
   "Home_RESERVE_SIEGE_ENFANT": "Siège Enfant",
   "Home_RESERVE_VOL": "Numéro du vol (Facultatif)",
   "SUCCESS": "Numéro du",
-  "ERROR": "Numéro du"
+  "ERROR": "Numéro du",
+  "PAYMENT_MODE": "La réservation est confirmée avec un acompte de 25% de la somme totale, tandis que le montant restant est payé directement au chauffeur en espèces le jour du transfer.",
+
+  "ABOUT_PARAG_1": "est une plateforme de réservation en ligne dont le siège est à Bruxelles, spécialisée dans la prise en charge d'un service de taxi depuis et vers l'aéroport",
+  "ABOUT_PARAG_2": "Nous sommes passionnés par notre travail, et notre objectif est de fournir de la qualité avec des chauffeurs professionnels",
+  "ABOUT_CONFORT_TITLE": "Votre confort est notre privilège",
+  "ABOUT_CONFORT_TXT": "Votre taxi aéroport fiable et votre transfert toujours à prix fixe. Pas de frais cachés. et un service personnalisé se traduisant par un service d'excellence",
+  "POINTS_DE_RAMSSAGE": "LIEU DE PRISE EN CHARGE",
+  "POINTS_DE_RAMSSAGE_BXL": "Notre chauffeur vous attendra à l’entrée du hall devant le magasin «Relay» avec une pancarte de votre nom. Nous sommes à jour sur l’état du vol.",
+  "POINTS_DE_RAMSSAGE_CHR": "Notre chauffeur vous attendra dans le hall d'arrivée juste devant le coffee shop de Starbucks."
 }

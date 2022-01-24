@@ -34,7 +34,7 @@
                 <h2 class="title">{{ "HOME_TITLE_RESERVATION" | translate}}</h2>
                 <div class="marquee">
                     <div>
-                        <h5 class="text-success mb-3">Annulation gratuite</h5>
+                        <h5 class="text-success mb-3">{{ "CANCEL_FREE" | translate}}</h5>
                     </div>
                 </div>
 
@@ -60,7 +60,8 @@
                                 <label>{{ 'Home_RESERVE_CHOIX' | translate}}</label>
                                 <select [(ngModel)]="choiceTaxi" formControlName="choiceTaxi" class="form-select">
                                     <option value="standard">Standard</option>
-                                    <option value="vip">VIP</option>
+                                    <option value="vip"> Business (VIP)</option>
+                                    <option value="vip"> Van</option>
                                 </select>
                                 <div *ngIf="formValidate.get('choiceTaxi')?.errors && formValidate.dirty">
                                     <div class="text-danger"
@@ -172,6 +173,9 @@
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>
+                                    <option value="5">6</option>
+                                    <option value="5">7</option>
+                                    <option value="5">8</option>
                                 </select>
                                 <!-- Validate persons number -->
                                 <div *ngIf="formValidate.get('persons')?.errors && formValidate.dirty">
@@ -264,11 +268,7 @@
                                 <br>
                                 <p class=" border border-primary bg-white rounded p-3 text-primary mt-3"
                                     style="max-width: 400px;">
-
-                                    La réservation est confirmée avec un acompte de 25% de la somme totale, tandis
-                                    que
-                                    le montant restant est payé directement au chauffeur en espèces
-                                    le jour du transfer.
+                                    {{ 'PAYMENT_MODE' | translate}}
 
                                 </p>
 

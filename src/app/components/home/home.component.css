@@ -112,6 +112,10 @@ fa-icon {
   padding-bottom: 40px;
 }
 
+.vip-home p {
+  line-height: 24px;
+}
+
 .phone-padding {
   padding-left: 0;
 }

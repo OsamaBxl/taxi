@@ -72,3 +72,9 @@ nav {
 .navbar-dark .navbar-nav .nav-link.active {
   color: #fff !important;
 }
+
+@media only screen and (max-width: 600px) {
+  .phone {
+    font-size: 17px;
+  }
+}

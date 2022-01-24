@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   apiUrl: 'https://airportcab.be/back/api',
-  GoogleapiKey: 'AIzaSyCwG3GsvVEwoGTqT-62vMSunbmBg_hEniY',
+  GoogleapiKey: 'AIzaSyDRwOjq4-UuOnN3BIQvW1C6EDILlUEH2mM',
 };
