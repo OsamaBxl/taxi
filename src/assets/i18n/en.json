@@ -3,6 +3,8 @@
   "ABOUT": "ABOUT",
   "RESERVATION": "RESERVATION",
   "CONTACT_US_BTN": "Contact us",
+  "BXL_AIRPORT": "Brussels Airport",
+  "CHR_AIRPORT": "Brussels-Charleroi Airport",
 
   "CANCEL_FREE": "Free cancellation",
   "HOME_CAPTION": "To all airports in Europe",
@@ -20,8 +22,8 @@
   "HOME_GUARANTY_PAR_3": "All our taxi vehicles are disinfected after each trip.",
   "HOME_GUARANTY_TITLE_4": "100% comfort",
   "HOME_GUARANTY_PAR_4": "Just lean back and enjoy the trip",
-  "HOME_VIP_PAR_1": " provides you with experienced and multilingual drivers, all professionals in a profession where courtesy, helpfulness, punctuality and discretion are the foundations.",
-  "HOME_VIP_PAR_2": "Their in-depth knowledge of the Belgian, Dutch, Luxembourg, German and French road networks will allow you to reach the destinations of your choice in the best conditions of comfort and time.",
+  "HOME_VIP_PAR_1": "Airport Cab put at your disposal multilingual and experimented drivers, all of them are professionals of this job whose foundations require courtesy, helpfulness, promptness and discretion.",
+  "HOME_VIP_PAR_2": "Their deepen knowledge of the Belgian, Dutch, Luxembourgish, German and French road network will allow you to reach the destination of you're choice in the best conditions of comfort and time.",
   "HOME_TITLE_RESERVATION": "QUICK BOOKING",
   "Home_RESERVE_NOM": "Full Name",
   "Home_RESERVE_RAMASSER": "Pick up from",
@@ -47,5 +49,7 @@
   "ABOUT_PARAG_2": ".We are passionate about our work, and our goal is to provide quality with professional drivers.",
   "ABOUT_CONFORT_TITLE": "Your comfort is our privilege",
   "ABOUT_CONFORT_TXT": "Your reliable airport taxi and transfer always at a fixed price. No hidden fees. and personalised service resulting in a service of excellence.",
-  "POINTS_DE_RAMSSAGE": "AIRPORT PICK-UP POINTS"
+  "POINTS_DE_RAMSSAGE": "AIRPORT PICK-UP POINTS",
+  "POINTS_DE_RAMSSAGE_BXL": "Our driver will wait for your arrival at the entrance of the «Relay» shop with a placard with your name. We are up to date on the status of your flight.",
+  "POINTS_DE_RAMSSAGE_CHR": "Our driver will wait for you in the arrival hall, in front of «Starbucks» coffee shop, he will be waiting with a placard with your name. We are up to date on the status of your flight."
 }

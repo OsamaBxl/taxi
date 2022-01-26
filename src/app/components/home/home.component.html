@@ -124,9 +124,41 @@
                                 <span class="text-danger"> *</span>
                                 <div class="phone">
                                     <div class="row">
-                                        <div class="col-4">
-                                            <select [(ngModel)]="phoneCode" formControlName="phoneCode"
-                                                class="form-select">
+
+                                        <mat-card>
+                                            <mat-card-content>
+                                                <form class="profile" [formGroup]="profileForm">
+                                                    <div formGroupName="phone">
+                                                        <mat-form-field appearance="standard" class="phone_country">
+                                                            <!-- <mat-label>Country</mat-label> -->
+                                                            <mat-select formControlName="country"
+                                                                (selectionChange)="formatNumber()">
+                                                                <mat-option *ngFor="let countryCode of countyCodes"
+                                                                    [value]="countryCode.code">
+                                                                    {{countryCode.country}}
+                                                                </mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                        <mat-form-field appearance="standard" class="phone_number">
+                                                            <mat-label>{{ 'Home_RESERVE_TEL' | translate}}</mat-label>
+                                                            <input formControlName="number" type="tel"
+                                                                placeholder="Phone" (input)="formatNumber()"
+                                                                [errorStateMatcher]="phoneErrorMatcher" matInput>
+                                                            <!-- <mat-error *ngIf="!phoneGroup.valid">
+                                                                Valid Phone Number: {{phoneHint}}
+                                                            </mat-error> -->
+                                                            <!-- <mat-hint>{{phoneHint}}</mat-hint> -->
+                                                        </mat-form-field>
+                                                    </div>
+                                                </form>
+                                            </mat-card-content>
+                                        </mat-card>
+
+                                        <!-- {{ formValidate.value | json}} -->
+                                        <!-- {{ profileForm.value | json }} -->
+                                        <!-- {{ control.phone }} -->
+                                        <!-- <div class="col-4">
+                                            <select [(ngModel)]="country" formControlName="country" class="form-select">
                                                 <option value="+31">+31</option>
                                                 <option value="+32">+32</option>
                                                 <option value="+33">+33</option>
@@ -139,24 +171,23 @@
                                         </div>
 
                                         <div class="col-8 phone-padding">
-                                            <input formControlName="phoneNumber" type="text"
-                                                class="form-control is-invalid" placeholder="ex: 472958521"
-                                                [ngClass]="{'is-invalid': formValidate.get('phoneNumber')?.errors && formValidate.get('phoneNumber')?.touched }">
-                                        </div>
+                                            <input formControlName="number" type="text" class="form-control is-invalid"
+                                                placeholder="ex: 472958521"
+                                                [ngClass]="{'is-invalid': formValidate.get('number')?.errors && formValidate.get('number')?.touched }">
+                                        </div> -->
+
+
                                     </div>
                                 </div>
                                 <!-- Validate Phone -->
-                                <div *ngIf="formValidate.get('phoneNumber')?.errors && formValidate.dirty">
-                                    <div class="text-danger"
-                                        *ngIf="formValidate.get('phoneNumber')?.errors?.['required']">
+                                <div *ngIf="formValidate.get('number')?.errors && formValidate.dirty">
+                                    <div class="text-danger" *ngIf="formValidate.get('number')?.errors?.['required']">
                                         Phone number is required
                                     </div>
-                                    <div class="text-danger"
-                                        *ngIf="formValidate.get('phoneNumber')?.errors?.['minlength']">
+                                    <div class="text-danger" *ngIf="formValidate.get('number')?.errors?.['minlength']">
                                         Phone number is not valid
                                     </div>
-                                    <div class="text-danger"
-                                        *ngIf="formValidate.get('phoneNumber')?.errors?.['maxlength']">
+                                    <div class="text-danger" *ngIf="formValidate.get('number')?.errors?.['maxlength']">
                                         Phone number is too long
                                     </div>
                                 </div>
@@ -283,8 +314,8 @@
                     </div>
 
                     <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-primary"
-                            [disabled]="!formValidate.valid || !from || !to ">{{
+                        <button type="submit" [disabled]="!formValidate.valid || !from || !to "
+                            class="btn btn-primary">{{
                             'Home_RESERVE_BTN' | translate}}</button>
                     </div>
 

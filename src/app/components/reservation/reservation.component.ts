@@ -20,7 +20,7 @@ export class ReservationComponent implements OnInit {
 
   choiceTaxi = 'standard';
   seigeEnfant = 'no';
-  phoneCode = '+32';
+  country = '+32';
   payment = 'cash';
   vol: 0;
   faHandHoldingUsd = faHandHoldingUsd;
@@ -38,13 +38,13 @@ export class ReservationComponent implements OnInit {
       Validators.required,
       Validators.minLength(3),
     ]),
-    phoneNumber: new FormControl(null, [
+    number: new FormControl(null, [
       Validators.required,
       Validators.minLength(8),
       Validators.maxLength(11),
     ]),
     email: new FormControl(null, [Validators.required, Validators.email]),
-    phoneCode: new FormControl(null, [Validators.required]),
+    country: new FormControl(null, [Validators.required]),
     vol: new FormControl(null),
     seigeEnfant: new FormControl(null),
     from: new FormControl(null),
@@ -73,17 +73,17 @@ export class ReservationComponent implements OnInit {
 
   onFormSubmit() {
     if (this.formValidate.valid) {
-      let phoneNumber =
-        this.formValidate.value.phoneCode + this.formValidate.value.phoneNumber;
+      let number =
+        this.formValidate.value.country + this.formValidate.value.number;
 
-      if (phoneNumber[3] == '0') {
-        phoneNumber = phoneNumber.replace('0', '');
+      if (number[3] == '0') {
+        number = number.replace('0', '');
       }
 
       const newBooking: BOOkingData = {
         fullName: this.formValidate.get(['fullName'])?.value,
-        phoneCode: this.formValidate.get(['phoneCode'])?.value,
-        phoneNumber: this.formValidate.get(['phoneNumber'])?.value,
+        country: this.formValidate.get(['country'])?.value,
+        number: this.formValidate.get(['number'])?.value,
         email: this.formValidate.get(['email'])?.value,
         choiceTaxi: this.formValidate.get(['choiceTaxi'])?.value,
         personsNum: this.formValidate.get(['persons'])?.value,

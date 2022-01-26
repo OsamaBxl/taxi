@@ -3,6 +3,8 @@
   "ABOUT": "OVER ONS",
   "RESERVATION": "RESERVERING",
   "CONTACT_US_BTN": "Neem contact op",
+  "BXL_AIRPORT": "Brussels Airport",
+  "CHR_AIRPORT": "Luchthaven Brussel-Charleroi",
 
   "CANCEL_FREE": "Gratis afzegging",
   "HOME_CAPTION": "Naar alle luchthavens in Europa ",
@@ -20,8 +22,8 @@
   "HOME_GUARANTY_PAR_3": "Al onze taxivoertuigen worden na elke rit gedesinfecteerd.",
   "HOME_GUARANTY_TITLE_4": "100% comfort",
   "HOME_GUARANTY_PAR_4": "Leun achterover en geniet van de reis",
-  "HOME_VIP_PAR_1": " biedt u ervaren en meertalige chauffeurs, stuk voor stuk professionals in een vak waar hoffelijkheid, behulpzaamheid, stiptheid en discretie de basis vormen.",
-  "HOME_VIP_PAR_2": "Hun grondige kennis van het Belgische, Nederlandse, Luxemburgse, Duitse en Franse wegennet zal u toelaten om de bestemmingen van uw keuze in de beste omstandigheden van comfort en tijd te bereiken.",
+  "HOME_VIP_PAR_1": "Airport Cab biedt u ervaren en meertalige chauffeurs, wiens hoffelijkheid, behulpzaamheid, stiptheid en discretie de fundamenten zijn.",
+  "HOME_VIP_PAR_2": "Hun grondige kennis van Belgische, Hollandse, Luxemburgse, Duitse en Franse wegennet zal u helpen om de bestemmingen van uw keuze te bereiken in de beste omstandigheden van comfort en tijd.",
   "HOME_TITLE_RESERVATION": "SNEL BOEKEN",
   "Home_RESERVE_NOM": "Voor-en achternaam",
   "Home_RESERVE_RAMASSER": "Oppakken van",
@@ -48,5 +50,7 @@
   "ABOUT_PARAG_2": "We zijn gepassioneerd over ons werk en ons doel is om kwaliteit te bieden met professionele chauffeurs",
   "ABOUT_CONFORT_TITLE": "Uw comfort is ons voorrecht",
   "ABOUT_CONFORT_TXT": "Uw betrouwbare luchthaventaxi en transfer altijd tegen een vaste prijs. Geen verborgen kosten. en persoonlijke service resulterend in een uitmuntende service.",
-  "POINTS_DE_RAMSSAGE": "LUCHTHAVEN OPHAALPUNTEN"
+  "POINTS_DE_RAMSSAGE": "LUCHTHAVEN OPHAALPUNTEN",
+  "POINTS_DE_RAMSSAGE_BXL": "Onze chauffeur zal voor u wachten bij de ingang, voor de «Relay» winkel met een bord met uw naam. We zijn constant op de hoogte van de status van de vlucht.",
+  "POINTS_DE_RAMSSAGE_CHR": "Onze chauffeur wacht op je in de aankomsthal, voor de koffiebar «Starbucks» met een bord met uw naam. We zijn constant op de hoogte van de status van de vlucht."
 }

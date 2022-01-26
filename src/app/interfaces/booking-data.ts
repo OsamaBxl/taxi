@@ -2,8 +2,8 @@ export interface BOOkingData {
   fullName: string;
   from: string;
   to: string;
-  phoneCode: string;
-  phoneNumber: string;
+  country: string;
+  number: string;
   email: string;
   suitecaseNum: number;
   personsNum: number;

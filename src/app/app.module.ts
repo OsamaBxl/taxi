@@ -19,9 +19,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GooglePlacesComponent } from './components/google-places/google-places.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+// import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     NavbarComponent,
     FooterComponent,
     GooglePlacesComponent,
-    SnackbarComponent
+    SnackbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +49,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
+
     HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
@@ -55,7 +61,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     }),
     MatIconModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    MatInputModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

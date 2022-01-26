@@ -6,6 +6,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+.lead {
+  line-height: 25px;
+}
+
 p {
   color: #555;
 }
@@ -68,4 +72,17 @@ body {
 .mat-typography h5 {
   font-size: 18px;
   font-weight: bold;
+}
+
+.mat-card {
+  padding: 0 0 0 16px !important;
+}
+.mat-form-field-appearance-standard .mat-form-field-flex {
+  padding-top: 0 !important;
+}
+.mat-label ::placeholder {
+  padding-left: 120px !important;
+}
+.mat-form-field-infix {
+  border: 0;
 }

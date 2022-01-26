@@ -3,8 +3,11 @@
         <div class="row">
             <div class="col-sm-6">
                 <p class="lead">
-                    <b>Airport Cab</b> {{ "ABOUT_PARAG_1" | translate }} <br>
-                    {{ "ABOUT_PARAG_2" | translate }}
+                    <b>Airport Cab</b>{{ "HOME_SUMMARY_PAR_1" | translate }}
+                </p>
+
+                <p class="lead">
+                    {{ "HOME_SUMMARY_PAR_2" | translate }}
                 </p>
 
                 <h5 class="mt-5">{{ "ABOUT_CONFORT_TITLE" | translate }}</h5>
@@ -25,29 +28,39 @@
 
         <hr class="mt-5">
 
-        <h4 class="mt-5"><b>{{ "POINTS_DE_RAMSSAGE" | translate }} :</b></h4>
+        <div class="airport-pickup">
+            <h2 class="mt-2 mb-4 text-center"><b>{{ "POINTS_DE_RAMSSAGE" | translate }} </b></h2>
 
 
-        <div class="row">
-            <div class="col-sm-6">
-                <p class="lead">
-                    <b>À l’aéroport national de Bruxelles</b>, le chauffeur attend à l’entrée du hall devant le
-                    «Café-café
-                    Java»
-                    avec l’inscription
-                    de votre nom. Nous sommes à jour sur l’état du vol.
-                </p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3><b>{{ "BXL_AIRPORT" | translate }}</b></h3>
+                    <div class="row mb-4">
+                        <div class="col-md-6 ps-3 airport-pickup">
+
+                            <p>{{ "POINTS_DE_RAMSSAGE_BXL" | translate }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="assets/images/Relay-brussels-airport.jpg" alt="Relay brussels airport"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <h3><b>{{ "CHR_AIRPORT" | translate }}</b></h3>
+                    <div class="row mb-4">
+                        <div class="col-md-6 ps-3 airport-pickup">
+                            <p>{{ "POINTS_DE_RAMSSAGE_CHR" | translate }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="assets/images/sturbucks-airport-charleroi.jpg" alt="sturbucks airport charleroi"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <p class="lead">
-                    <b>À l’aéroport de Charleroi</b>, le conducteur attend à l’entrée du hall devant le «magasin de
-                    chocolat
-                    Léonidas» avec
-                    l’inscription de votre nom . Nous sommes à jour sur l’état du vol.
-                </p>
-            </div>
+
         </div>
-
 
 
 

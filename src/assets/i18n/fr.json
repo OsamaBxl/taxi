@@ -3,6 +3,8 @@
   "ABOUT": "A PROPOS",
   "RESERVATION": "RESERVATION",
   "CONTACT_US_BTN": "Nous contacter",
+  "BXL_AIRPORT": "Brussels Airport (Aéroport de Bruxelles)",
+  "CHR_AIRPORT": "Aéroport de Bruxelles-Charleroi",
 
   "CANCEL_FREE": "Annulation gratuite",
   "HOME_CAPTION": "Vers tous les aéroports de l'Europe",
@@ -19,7 +21,7 @@
   "HOME_GUARANTY_TITLE_3": "Sécurité des clients",
   "HOME_GUARANTY_PAR_3": "Tous nos véhicules taxis sont désinfectés après chaque trajet.",
   "HOME_GUARANTY_TITLE_4": "100% Confort",
-  "HOME_GUARANTY_PAR_4": "Il suffit de se pencher en arrière et de profiter du voyage",
+  "HOME_GUARANTY_PAR_4": "Il suffit de s'installer à l'arrière du véhicule et de profiter du voyage",
   "HOME_VIP_PAR_1": " met à votre disposition des chauffeurs expérimentés et multilingues, tous professionnels d'un métier dont la courtoisie, la serviabilité, la ponctualité et la discrétion sont les fondements",
   "HOME_VIP_PAR_2": "Leur connaissance approfondie des réseaux routiers belges, hollandais, luxembourgeois, allemands et français vous permettrons d'atteindre les destinations de votre choix dans les meilleures conditiont de confort et de temps.",
   "HOME_TITLE_RESERVATION": "RÉSERVATION RAPIDE",
@@ -50,5 +52,5 @@
   "ABOUT_CONFORT_TXT": "Votre taxi aéroport fiable et votre transfert toujours à prix fixe. Pas de frais cachés. et un service personnalisé se traduisant par un service d'excellence",
   "POINTS_DE_RAMSSAGE": "LIEU DE PRISE EN CHARGE",
   "POINTS_DE_RAMSSAGE_BXL": "Notre chauffeur vous attendra à l’entrée du hall devant le magasin «Relay» avec une pancarte de votre nom. Nous sommes à jour sur l’état du vol.",
-  "POINTS_DE_RAMSSAGE_CHR": "Notre chauffeur vous attendra dans le hall d'arrivée juste devant le coffee shop de Starbucks."
+  "POINTS_DE_RAMSSAGE_CHR": "Notre chauffeur vous attendra dans le hall d'arrivée juste devant le coffee shop de «Starbucks», avec une pancarte de votre nom. Nous sommes à jour sur l’état du vol."
 }
