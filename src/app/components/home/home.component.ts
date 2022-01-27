@@ -124,8 +124,13 @@ export class HomeComponent implements OnInit {
    * from awesome-phonenumber.
    */
   formatNumber() {
-    const natNum = this.phoneNumber.getNumber('national');
+    const natNum =this.phoneNumber.getNumber('national'); //this.profileForm.get(['phone'])?.value.number
     this.phoneNumberControl.setValue(natNum ? natNum : this.phoneNumberDigits);
+  }
+
+  changeCodeName(countryCode){
+    const myCountry = this.countyCodes.find(country=>country.code == countryCode);
+    this.phoneNumberCodeName.setValue(myCountry ? myCountry.code_name : 'BE');
   }
 
   /**
@@ -269,8 +274,12 @@ export class HomeComponent implements OnInit {
 export const phoneValidator: any = (
   control: FormGroup
 ): ValidationErrors | null => {
-  const country = control.get('country');
+  const country = control.get('code_name');
   const num = control.get('number');
+  // console.log(country?.value);
+  // console.log(num?.value);
+  // console.log(new PhoneNumber(num?.value, country?.value));
+  
   if (
     num?.value &&
     country?.value &&

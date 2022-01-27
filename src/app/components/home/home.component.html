@@ -128,7 +128,7 @@
                                                     <div formGroupName="phone">
                                                         <mat-form-field appearance="standard" class="phone_country">
                                                             <!-- <mat-label>Country</mat-label> -->
-                                                            <mat-select formControlName="country" (selectionChange)="formatNumber()">
+                                                            <mat-select formControlName="country" (selectionChange)="formatNumber();changeCodeName($event.value)">
                                                                 <mat-option *ngFor="let countryCode of countyCodes" [value]="countryCode.code">
                                                                     {{countryCode.country}}
                                                                 </mat-option>
@@ -137,10 +137,10 @@
                                                         <mat-form-field appearance="standard" class="phone_number">
                                                             <mat-label>{{ 'Home_RESERVE_TEL' | translate}}</mat-label>
                                                             <input formControlName="number" type="tel" placeholder="Phone" (input)="formatNumber()" [errorStateMatcher]="phoneErrorMatcher" matInput>
-                                                            <!-- <mat-error *ngIf="!phoneGroup.valid">
+                                                            <mat-error *ngIf="!phoneGroup.valid">
                                                                 Valid Phone Number: {{phoneHint}}
-                                                            </mat-error> -->
-                                                            <!-- <mat-hint>{{phoneHint}}</mat-hint> -->
+                                                            </mat-error>
+                                                            <mat-hint>{{phoneHint}}</mat-hint>
                                                         </mat-form-field>
                                                     </div>
                                                 </form>
