@@ -7,13 +7,7 @@
                 <hr>
             </div>
 
-            <p class="vip-text"><b>Airport Cab</b> est disponible pour vous 24 heures sur 24, 7 jours
-                semaine. <b> Airport Cab</b>
-                met à votre
-                disposition des limousines et vans de luxe, équipés en air conditionné, téléphone cellulaire et toutes
-                options de confort et de sécurité.
-                Nos véhicules sont neufs et de couleurs discrètes. <br>
-                Nous satisferons toutes demandes particulières concernant le service et le choix du véhicule.
+            <p class="vip-text"><b>Airport Cab</b> {{ "VIP_PARAG_1" | translate}}
                 <br> <br>
                 <a routerLink="/reservation"><button class="btn btn-primary"> {{ "BTN_RESERVE" |
                         translate}}</button></a>
@@ -28,47 +22,44 @@
             <img src="assets/images/vip.jpg" alt="limousine" class="img-fluid w-75">
         </div>
         <div class="col-sm-6">
-            <h5 class="text-secondary">Voitures avec chauffeur uniquement.</h5>
+            <h5 class="text-secondary">{{ "VIP_PARAG_2_TITRE" | translate}}</h5>
 
             <p class="vip-text">
-                <b> Airport Cab</b> met à votre disposition des chauffeurs expérimentés et multilingues, tous
-                professionnels d'un
-                métier dont la courtoisie, la serviabilité, la ponctualité et la discrétion sont les fondements.
+                <b> Airport Cab</b> {{ "VIP_PARAG_2_A" | translate}}
             </p>
-            <p>Leur connaissance approfondie des
-                réseaux routiers belges, hollandais, luxembourgeois, allemands et français vous permettront d'atteindre
-                les destinations de votre choix dans les meilleures conditions de confort et de temps.</p>
+            <p>{{ "VIP_PARAG_2_B" | translate}}</p>
             <hr class="my-4">
             <div class="text-center">
                 <h4>AIRPORT CAB</h4>
-                <p class="text-muted">Votre confort est notre privilège</p>
+                <p class="text-muted">{{ "ABOUT_CONFORT_TITLE" | translate}}</p>
                 <div class="mt-3">
-                    <button class="btn btn-primary" routerLink="/contact">{{ "BTN_INFO" | translate}}</button>
+                    <button class="btn btn-primary" routerLink="/contact">{{ "BTN_RESERVE" | translate}}</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container  liens-utiles">
+<div class="container  liens-utiles pb-4">
     <hr class="my-4">
 
-    <h6 class="mb-4">CI-DESSOUS, QUELQUES LIENS UTILES POUR VOTRE SÉJOUR EN BELGIQUE :</h6>
+    <h6 class="mb-4"><b>{{ "VIP_USEFUL_LINKS" | translate}}</b></h6>
     <p>
-        Horaires de départ et d'arrivée à l'Aéroport de Bruxelles National : <a href="https://www.brusselsairport.be"
+        {{ "VIP_USEFUL_LINK_1" | translate}} : <a href="https://www.brusselsairport.be"
             target="_blanc">www.brusselsairport.be</a></p>
     <p>
-        TGV à destination de France, Pays-Bas et Allemagne : <a href="https://www.thalys.com"
-            target="_blanc">www.thalys.com</a>
+        {{ "VIP_USEFUL_LINK_2" | translate}} : <a href="https://www.thalys.com" target="_blanc">www.thalys.com</a>
     </p>
     <p>
-        TGV à destination du Royaume-Uni : <a href="https://www.eurostar.com" target="_blanc">www.eurostar.com</a>
+        {{ "VIP_USEFUL_LINK_3" | translate}} : <a href="https://www.eurostar.com" target="_blanc">www.eurostar.com</a>
     </p>
     <p>
-        Prévisions météo en Belgique : <a href="https://www.meteobelgique.be" target="_blanc">www.meteobelgique.be</a>
+        {{ "VIP_USEFUL_LINK_4" | translate}} : <a href="https://www.meteobelgique.be"
+            target="_blanc">www.meteobelgique.be</a>
     </p>
     <p>
-        Office du Tourisme Belge : <a href="https://www.visitbelgium.com" target="_blanc">www.visitbelgium.com</a>
+        {{ "VIP_USEFUL_LINK_5" | translate}} : <a href="https://www.visitbelgium.com"
+            target="_blanc">www.visitbelgium.com</a>
     </p>
 
 </div>

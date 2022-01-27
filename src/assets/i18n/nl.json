@@ -52,5 +52,24 @@
   "ABOUT_CONFORT_TXT": "Uw betrouwbare luchthaventaxi en transfer altijd tegen een vaste prijs. Geen verborgen kosten. en persoonlijke service resulterend in een uitmuntende service.",
   "POINTS_DE_RAMSSAGE": "LUCHTHAVEN OPHAALPUNTEN",
   "POINTS_DE_RAMSSAGE_BXL": "Onze chauffeur zal voor u wachten bij de ingang, voor de «Relay» winkel met een bord met uw naam. We zijn constant op de hoogte van de status van de vlucht.",
-  "POINTS_DE_RAMSSAGE_CHR": "Onze chauffeur wacht op je in de aankomsthal, voor de koffiebar «Starbucks» met een bord met uw naam. We zijn constant op de hoogte van de status van de vlucht."
+  "POINTS_DE_RAMSSAGE_CHR": "Onze chauffeur wacht op je in de aankomsthal, voor de koffiebar «Starbucks» met een bord met uw naam. We zijn constant op de hoogte van de status van de vlucht.",
+
+  "VIP_PARAG_1": " is 24 uur op 7 beschikbaar. Airport Cab stelt u luxe limousines en busjes ter beschikking, uitgerust met airconditioning, telefoon en alle comfort en veiligheid. Onze voertuigen zijn nieuw met discrete kleuren.",
+  "VIP_PARAG_2_A": " biedt u ervaren en meertalige chauffeurs, wiens hoffelijkheid, behulpzaamheid, stiptheid en discretie de fundamenten zijn.",
+  "VIP_PARAG_2_B": "Hun grondige kennis van Belgische, Hollandse, Luxemburgse, Duitse en Franse wegennet zal u helpen om de bestemmingen van uw keuze te bereiken in de beste omstandigheden van comfort en tijd.",
+  "VIP_PARAG_2_TITRE": "Alleen auto's met chauffeur.",
+  "VIP_USEFUL_LINKS": "ENKELE NUTTIGE LINKS VOOR UW VERBLIJF IN BELGI:",
+  "VIP_USEFUL_LINK_1": "Vertrek- en aankomsttijden van Brussels National Airport",
+  "VIP_USEFUL_LINK_2": "TGV naar Frankrijk, Nederland en Duitsland",
+  "VIP_USEFUL_LINK_3": "TGV naar VK",
+  "VIP_USEFUL_LINK_4": "Weersverwachting in België",
+  "VIP_USEFUL_LINK_5": "Belgische Dienst voor Toerisme (Belgische VVV)",
+
+  "CONTACT_US": "Een vraag ?",
+  "CONTACT_US_P": "We zullen zo snel mogelijk op u reageren. Voor dringende vragen kunt u contact met ons opnemen via: ",
+  "CONTACT_NAME": "Voor-en achternaam",
+  "CONTACT_PHONE": "Telefoonnummer",
+  "CONTACT_SUBJECT": "Onderwerp",
+  "CONTACT_MESSAGE": "Schrijf je bericht hier...",
+  "CONTACT_SEND_BTN": "VERSTUREN"
 }

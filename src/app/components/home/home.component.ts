@@ -124,12 +124,14 @@ export class HomeComponent implements OnInit {
    * from awesome-phonenumber.
    */
   formatNumber() {
-    const natNum =this.phoneNumber.getNumber('national'); //this.profileForm.get(['phone'])?.value.number
+    const natNum = this.phoneNumber.getNumber('national'); //this.profileForm.get(['phone'])?.value.number
     this.phoneNumberControl.setValue(natNum ? natNum : this.phoneNumberDigits);
   }
 
-  changeCodeName(countryCode){
-    const myCountry = this.countyCodes.find(country=>country.code == countryCode);
+  changeCodeName(countryCode) {
+    const myCountry = this.countyCodes.find(
+      (country) => country.code == countryCode
+    );
     this.phoneNumberCodeName.setValue(myCountry ? myCountry.code_name : 'BE');
   }
 
@@ -237,13 +239,16 @@ export class HomeComponent implements OnInit {
           this.durationText = results.rows[0].elements[0].duration.text;
           this.durationValue = results.rows[0].elements[0].duration.value;
 
-          if(this.formValidate.get('choiceTaxi')?.value == 'standard'){
+          if (this.formValidate.get('choiceTaxi')?.value == 'standard') {
             if (this.DistanceValue / 1000 < 20) {
               this.estimatedPrice = (this.DistanceValue / 1000) * 2.4;
             } else {
               this.estimatedPrice = (this.DistanceValue / 1000) * 1.5;
             }
-          }else if (this.formValidate.get('choiceTaxi')?.value == 'vip' || this.formValidate.get('choiceTaxi')?.value == 'van'){
+          } else if (
+            this.formValidate.get('choiceTaxi')?.value == 'vip' ||
+            this.formValidate.get('choiceTaxi')?.value == 'van'
+          ) {
             if (this.DistanceValue / 1000 < 20) {
               this.estimatedPrice = (this.DistanceValue / 1000) * 2.8;
             } else {
@@ -279,7 +284,7 @@ export const phoneValidator: any = (
   // console.log(country?.value);
   // console.log(num?.value);
   // console.log(new PhoneNumber(num?.value, country?.value));
-  
+
   if (
     num?.value &&
     country?.value &&

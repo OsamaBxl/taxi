@@ -35,7 +35,8 @@
                                 <label>{{ 'Home_RESERVE_CHOIX' | translate}}</label>
                                 <select [(ngModel)]="choiceTaxi" formControlName="choiceTaxi" class="form-select">
                                     <option value="standard">Standard</option>
-                                    <option value="vip">VIP</option>
+                                    <option value="vip"> Business (VIP)</option>
+                                    <option value="van"> Van</option>
                                 </select>
                                 <div *ngIf="formValidate.get('choiceTaxi')?.errors && formValidate.dirty">
                                     <div class="text-danger"
@@ -57,14 +58,10 @@
                                 </app-google-places>
 
 
-                                <!-- <button type="button" class="btn btn-success mt-2" (click)="getDistance()"> Calculate
-                                    distance</button> -->
+
                                 <div class="finalPrice" *ngIf="!!estimatedPrice">
                                     <p class="bg-white  border border-primary rounded p-3 mt-2">
-                                        <!-- <small class="text-primary">Distance:</small>
-                                        <small>{{DistanceText}}</small><br> -->
-                                        <!-- <small class="text-primary">Estimated Time:</small>
-                                        <small>{{durationText}}</small><br> -->
+
                                         <small class="text-primary">Estimation:</small><small>{{estimatedPrice |
                                             number :
                                             '1.0-0'}} EUR</small> <br>
@@ -98,24 +95,36 @@
                                 <span class="text-danger"> *</span>
                                 <div class="phone">
                                     <div class="row">
-                                        <div class="col-4">
-                                            <select [(ngModel)]="country" formControlName="country" class="form-select">
-                                                <option value="+31">+31</option>
-                                                <option value="+32">+32</option>
-                                                <option value="+33">+33</option>
-                                                <option value="+34">+34</option>
-                                                <option value="+39">+39</option>
-                                                <option value="+41">+41</option>
-                                                <option value="+44">+44</option>
-                                                <option value="+49">+49</option>
-                                            </select>
-                                        </div>
 
-                                        <div class="col-8 phone-padding">
-                                            <input formControlName="number" type="text" class="form-control is-invalid"
-                                                placeholder="ex: 472958521"
-                                                [ngClass]="{'is-invalid': formValidate.get('number')?.errors && formValidate.get('number')?.touched }">
-                                        </div>
+                                        <mat-card>
+                                            <mat-card-content>
+                                                <form class="profile" [formGroup]="profileForm">
+                                                    <div formGroupName="phone">
+                                                        <mat-form-field appearance="standard" class="phone_country">
+                                                            <!-- <mat-label>Country</mat-label> -->
+                                                            <mat-select formControlName="country"
+                                                                (selectionChange)="formatNumber();changeCodeName($event.value)">
+                                                                <mat-option *ngFor="let countryCode of countyCodes"
+                                                                    [value]="countryCode.code">
+                                                                    {{countryCode.country}}
+                                                                </mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                        <mat-form-field appearance="standard" class="phone_number">
+                                                            <mat-label>{{ 'Home_RESERVE_TEL' | translate}}</mat-label>
+                                                            <input formControlName="number" type="tel"
+                                                                placeholder="Phone" (input)="formatNumber()"
+                                                                [errorStateMatcher]="phoneErrorMatcher" matInput>
+                                                            <mat-error *ngIf="!phoneGroup.valid">
+                                                                Valid Phone Number: {{phoneHint}}
+                                                            </mat-error>
+                                                            <mat-hint>{{phoneHint}}</mat-hint>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </form>
+                                            </mat-card-content>
+                                        </mat-card>
+
                                     </div>
                                 </div>
                                 <!-- Validate Phone -->
@@ -138,11 +147,16 @@
                                 <span class="text-danger"> *</span>
                                 <select formControlName="persons" class="form-select"
                                     [ngClass]="{'is-invalid': formValidate.get('persons')?.errors && formValidate.get('persons')?.touched }">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+                                    <ng-container *ngIf="formValidate.get('choiceTaxi')?.value == 'standard'">
+                                        <option *ngFor="let num of [1,2,3,4]" [value]="num">{{num}}</option>
+                                    </ng-container>
+                                    <ng-container *ngIf="formValidate.get('choiceTaxi')?.value == 'vip'">
+                                        <option *ngFor="let num of [1,2,3]" [value]="num">{{num}}</option>
+                                    </ng-container>
+                                    <ng-container *ngIf="formValidate.get('choiceTaxi')?.value == 'van'">
+                                        <option *ngFor="let num of [1,2,3,4,5,6]" [value]="num">{{num}}</option>
+                                    </ng-container>
+
                                 </select>
                                 <!-- Validate persons number -->
                                 <div *ngIf="formValidate.get('persons')?.errors && formValidate.dirty">
@@ -204,12 +218,21 @@
                                 <span class="text-danger"> *</span>
                                 <select formControlName="suitecase" class="form-select"
                                     [ngClass]="{'is-invalid': formValidate.get('suitecase')?.errors && formValidate.get('suitecase')?.touched }">
-                                    <option value="1">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+
+                                    <ng-container
+                                        *ngIf="formValidate.get('choiceTaxi')?.value == 'standard' || formValidate.get('choiceTaxi')?.value == 'vip'">
+                                        <option *ngFor="let num of [0,1,2,3]" [value]="num">{{num}}</option>
+                                    </ng-container>
+
+                                    <ng-container *ngIf="formValidate.get('choiceTaxi')?.value == 'van'">
+                                        <option *ngFor="let num of [0,1,2,3,4,5,6]" [value]="num">{{num}}</option>
+                                    </ng-container>
+                                    <!-- <option value="1">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option> -->
                                 </select>
                                 <div *ngIf="formValidate.get('suitecase')?.errors && formValidate.dirty">
                                     <div class="text-danger"
@@ -250,8 +273,8 @@
                     </div>
 
                     <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-primary"
-                            [disabled]="!formValidate.valid || !from || !to ">{{
+                        <button type="submit" [disabled]="!formValidate.valid || !from || !to "
+                            class="btn btn-primary">{{
                             'Home_RESERVE_BTN' | translate}}</button>
                     </div>
 

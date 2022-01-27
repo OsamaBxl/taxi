@@ -51,5 +51,24 @@
   "ABOUT_CONFORT_TXT": "Your reliable airport taxi and transfer always at a fixed price. No hidden fees. and personalised service resulting in a service of excellence.",
   "POINTS_DE_RAMSSAGE": "AIRPORT PICK-UP POINTS",
   "POINTS_DE_RAMSSAGE_BXL": "Our driver will wait for your arrival at the entrance of the «Relay» shop with a placard with your name. We are up to date on the status of your flight.",
-  "POINTS_DE_RAMSSAGE_CHR": "Our driver will wait for you in the arrival hall, in front of «Starbucks» coffee shop, he will be waiting with a placard with your name. We are up to date on the status of your flight."
+  "POINTS_DE_RAMSSAGE_CHR": "Our driver will wait for you in the arrival hall, in front of «Starbucks» coffee shop, he will be waiting with a placard with your name. We are up to date on the status of your flight.",
+
+  "VIP_PARAG_1": " is available for you 24 hour / 7 days per week. Airport Cab puts at your disposal a limousine, luxurious vans, with air conditioning equipment, cellphone and all the comfort and security. Our cars are new with discreet colors.",
+  "VIP_PARAG_2_A": " put at your disposal multilingual and experimented drivers, all of them are professionals of this job whose foundations require courtesy, helpfulness, promptness and discretion.",
+  "VIP_PARAG_2_B": "Their deepen knowledge of the Belgian, Dutch, Luxembourgish, German and French road network will allow you to reach the destination of your choice in the best conditions of comfort and time.",
+  "VIP_PARAG_2_TITRE": "Cars with driver only.",
+  "VIP_USEFUL_LINKS": "SOME USEFUL LINKS FOR YOUR STAY IN BELGIUM:",
+  "VIP_USEFUL_LINK_1": "Departure and arrival times at Brussels National Airport",
+  "VIP_USEFUL_LINK_2": "TGV to France, Netherlands and Germany",
+  "VIP_USEFUL_LINK_3": "TGV to UK",
+  "VIP_USEFUL_LINK_4": "Weather forecast in Belgium",
+  "VIP_USEFUL_LINK_5": "Belgian Tourist Office",
+
+  "CONTACT_US": "A question ?",
+  "CONTACT_US_P": "We will respond to you as soon as possible. For any urgent questions, please contact us at ",
+  "CONTACT_NAME": "Full name",
+  "CONTACT_PHONE": "Phone number",
+  "CONTACT_SUBJECT": "Subject",
+  "CONTACT_MESSAGE": "Type your message here...",
+  "CONTACT_SEND_BTN": "SEND"
 }
