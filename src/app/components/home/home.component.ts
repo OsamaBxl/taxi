@@ -227,18 +227,23 @@ export class HomeComponent implements OnInit {
           travelMode: google.maps.TravelMode.DRIVING,
         },
         (results: any) => {
-          // console.log('distance results (mts) -- ', results.rows[0].elements[0])
           this.DistanceText = results.rows[0].elements[0].distance.text;
           this.DistanceValue = results.rows[0].elements[0].distance.value;
           this.durationText = results.rows[0].elements[0].duration.text;
           this.durationValue = results.rows[0].elements[0].duration.value;
 
-          if (this.DistanceValue / 1000 < 20) {
-            // console.log('from if' , this.DistanceValue);
-            this.estimatedPrice = (this.DistanceValue / 1000) * 2.5;
-          } else {
-            // console.log('from Else' , this.DistanceValue);
-            this.estimatedPrice = (this.DistanceValue / 1000) * 1.5;
+          if(this.formValidate.get('choiceTaxi')?.value == 'standard'){
+            if (this.DistanceValue / 1000 < 20) {
+              this.estimatedPrice = (this.DistanceValue / 1000) * 2.4;
+            } else {
+              this.estimatedPrice = (this.DistanceValue / 1000) * 1.5;
+            }
+          }else if (this.formValidate.get('choiceTaxi')?.value == 'vip' || this.formValidate.get('choiceTaxi')?.value == 'van'){
+            if (this.DistanceValue / 1000 < 20) {
+              this.estimatedPrice = (this.DistanceValue / 1000) * 2.8;
+            } else {
+              this.estimatedPrice = (this.DistanceValue / 1000) * 1.9;
+            }
           }
         }
       );
