@@ -45,14 +45,12 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="form-group mt-3">
                                 <label>{{ 'Home_RESERVE_NOM' | translate}}</label> <span class="text-danger"> *</span>
-                                <input type="text" formControlName="fullName" class="form-control"
-                                    [ngClass]="{'is-invalid': formValidate.get('fullName')?.errors && formValidate.get('fullName')?.touched }">
+                                <input type="text" formControlName="fullName" class="form-control" [ngClass]="{'is-invalid': formValidate.get('fullName')?.errors && formValidate.get('fullName')?.touched }">
                                 <!-- Full name Validation -->
                                 <div *ngIf="formValidate.get('fullName')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('fullName')?.errors?.['required']">
                                         {{ "Champ requis" | translate}}</div>
-                                    <div class="text-danger"
-                                        *ngIf="formValidate.get('fullName')?.errors?.['minlength']">
+                                    <div class="text-danger" *ngIf="formValidate.get('fullName')?.errors?.['minlength']">
                                         {{ "La longueur minimale est de 3 caractères" | translate}}
                                     </div>
                                 </div>
@@ -66,8 +64,7 @@
                                     <!-- <option value="van"> Van</option> -->
                                 </select>
                                 <div *ngIf="formValidate.get('choiceTaxi')?.errors && formValidate.dirty">
-                                    <div class="text-danger"
-                                        *ngIf="formValidate.get('choiceTaxi')?.errors?.['required']">
+                                    <div class="text-danger" *ngIf="formValidate.get('choiceTaxi')?.errors?.['required']">
                                         {{ "Champ requis" | translate}}
                                     </div>
                                 </div>
@@ -129,22 +126,17 @@
                                                     <div formGroupName="phone">
                                                         <mat-form-field appearance="standard" class="phone_country">
                                                             <!-- <mat-label>Country</mat-label> -->
-                                                            <mat-select formControlName="country"
-                                                                (selectionChange)="formatNumber();changeCodeName($event.value)">
-                                                                <mat-option *ngFor="let countryCode of countyCodes"
-                                                                    [value]="countryCode.code">
+                                                            <mat-select formControlName="country" (selectionChange)="formatNumber();changeCodeName($event.value)">
+                                                                <mat-option *ngFor="let countryCode of countyCodes" [value]="countryCode.code">
                                                                     {{countryCode.country}}
                                                                 </mat-option>
                                                             </mat-select>
                                                         </mat-form-field>
                                                         <mat-form-field appearance="standard" class="phone_number">
                                                             <mat-label>{{ 'Home_RESERVE_TEL' | translate}}</mat-label>
-                                                            <input formControlName="number" type="tel"
-                                                                placeholder="Phone" (input)="formatNumber()"
-                                                                [errorStateMatcher]="phoneErrorMatcher" matInput>
+                                                            <input formControlName="number" type="tel" placeholder="Phone" (input)="formatNumber()" [errorStateMatcher]="phoneErrorMatcher" matInput>
                                                             <mat-error *ngIf="!phoneGroup.valid">
-                                                                {{ 'Numéro valide' | translate }}:
-                                                                {{phoneHint}}
+                                                                {{ 'Numéro valide' | translate }}: {{phoneHint}}
                                                             </mat-error>
                                                             <mat-hint>{{phoneHint}}</mat-hint>
                                                         </mat-form-field>
@@ -173,8 +165,7 @@
                             <div>
                                 <label class="mt-3">{{ 'Home_RESERVE_PERSONNES' | translate}}</label>
                                 <span class="text-danger"> *</span>
-                                <select formControlName="persons" class="form-select"
-                                    [ngClass]="{'is-invalid': formValidate.get('persons')?.errors && formValidate.get('persons')?.touched }">
+                                <select formControlName="persons" class="form-select" [ngClass]="{'is-invalid': formValidate.get('persons')?.errors && formValidate.get('persons')?.touched }">
                                     <ng-container *ngIf="formValidate.get('choiceTaxi')?.value == 'standard'">
                                         <option *ngFor="let num of [1,2,3,4]" [value]="num">{{num}}</option>
                                     </ng-container>
@@ -194,8 +185,7 @@
                             </div>
                             <div>
                                 <label class="mt-3">{{ 'Home_RESERVE_SIEGE_ENFANT' | translate}}</label>
-                                <select formControlName="seigeEnfant" class="form-select" [(ngModel)]="seigeEnfant"
-                                    [ngClass]="{'is-invalid': formValidate.get('seigeEnfant')?.errors && formValidate.get('seigeEnfant')?.touched }">
+                                <select formControlName="seigeEnfant" class="form-select" [(ngModel)]="seigeEnfant" [ngClass]="{'is-invalid': formValidate.get('seigeEnfant')?.errors && formValidate.get('seigeEnfant')?.touched }">
                                     <option value="no">{{ "Non" | translate}}</option>
                                     <option value="yes">{{ "Oui" | translate}}</option>
                                 </select>
@@ -214,8 +204,7 @@
                             <div>
                                 <label class="mt-3">E-mail</label>
                                 <span class="text-danger"> *</span>
-                                <input formControlName="email" type="text" placeholder="E-mail" class="form-control"
-                                    [ngClass]="{'is-invalid': formValidate.get('email')?.errors && formValidate.get('email')?.touched }">
+                                <input formControlName="email" type="text" placeholder="E-mail" class="form-control" [ngClass]="{'is-invalid': formValidate.get('email')?.errors && formValidate.get('email')?.touched }">
                                 <div *ngIf="formValidate.get('email')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('email')?.errors?.['required']">
                                         {{ "Champ requis" | translate}}
@@ -230,9 +219,7 @@
                             <div>
                                 <label class="mt-3">{{ 'Home_RESERVE_DATE' | translate}}</label>
                                 <span class="text-danger"> *</span>
-                                <input formControlName="time" type="datetime-local" class="form-control"
-                                    name="reservationDate"
-                                    [ngClass]="{'is-invalid': formValidate.get('time')?.errors && formValidate.get('time')?.touched }">
+                                <input formControlName="time" type="datetime-local" class="form-control" name="reservationDate" [ngClass]="{'is-invalid': formValidate.get('time')?.errors && formValidate.get('time')?.touched }">
 
                                 <div *ngIf="formValidate.get('time')?.errors && formValidate.dirty">
                                     <div class="text-danger" *ngIf="formValidate.get('time')?.errors?.['required']">
@@ -244,8 +231,7 @@
                             <div>
                                 <label class="mt-3">{{ 'Home_RESERVE_VALISE' | translate}}</label>
                                 <span class="text-danger"> *</span>
-                                <select formControlName="suitecase" class="form-select"
-                                    [ngClass]="{'is-invalid': formValidate.get('suitecase')?.errors && formValidate.get('suitecase')?.touched }">
+                                <select formControlName="suitecase" class="form-select" [ngClass]="{'is-invalid': formValidate.get('suitecase')?.errors && formValidate.get('suitecase')?.touched }">
 
                                     <ng-container
                                         *ngIf="formValidate.get('choiceTaxi')?.value == 'standard' || formValidate.get('choiceTaxi')?.value == 'vip'">
@@ -263,8 +249,7 @@
                                     <option value="5">5</option> -->
                                 </select>
                                 <div *ngIf="formValidate.get('suitecase')?.errors && formValidate.dirty">
-                                    <div class="text-danger"
-                                        *ngIf="formValidate.get('suitecase')?.errors?.['required']">
+                                    <div class="text-danger" *ngIf="formValidate.get('suitecase')?.errors?.['required']">
                                         {{ "Champ requis" | translate}}
                                     </div>
                                 </div>
@@ -284,8 +269,7 @@
 
 
                                 <br>
-                                <p class=" border border-primary bg-white rounded p-3 text-primary mt-3"
-                                    style="max-width: 400px;">
+                                <p class=" border border-primary bg-white rounded p-3 text-primary mt-3" style="max-width: 400px;">
                                     {{ 'PAYMENT_MODE' | translate}}
 
                                 </p>
@@ -301,8 +285,7 @@
                     </div>
 
                     <div class="text-center mt-4">
-                        <button type="submit" [disabled]="!formValidate.valid || !from || !to "
-                            class="btn btn-primary">{{
+                        <button type="submit" [disabled]="!formValidate.valid || !from || !to " class="btn btn-primary">{{
                             'Home_RESERVE_BTN' | translate}}</button>
                     </div>
 
