@@ -134,7 +134,7 @@
                                                         </mat-form-field>
                                                         <mat-form-field appearance="standard" class="phone_number">
                                                             <mat-label>{{ 'Home_RESERVE_TEL' | translate}}</mat-label>
-                                                            <input formControlName="number" type="tel" placeholder="Phone" (input)="formatNumber()" [errorStateMatcher]="phoneErrorMatcher" matInput>
+                                                            <input required formControlName="number" type="tel" placeholder="Phone" (input)="formatNumber()" [errorStateMatcher]="phoneErrorMatcher" matInput>
                                                             <mat-error *ngIf="!phoneGroup.valid">
                                                                 {{ 'Numéro valide' | translate }}: {{phoneHint}}
                                                             </mat-error>
@@ -285,7 +285,7 @@
                     </div>
 
                     <div class="text-center mt-4">
-                        <button type="submit" [disabled]="!formValidate.valid || !from || !to " class="btn btn-primary">{{
+                        <button type="submit" [disabled]="!formValidate.valid || !from || !to || !profileForm.valid" class="btn btn-primary">{{
                             'Home_RESERVE_BTN' | translate}}</button>
                     </div>
 
