@@ -70,5 +70,20 @@
   "CONTACT_PHONE": "Phone number",
   "CONTACT_SUBJECT": "Subject",
   "CONTACT_MESSAGE": "Type your message here...",
-  "CONTACT_SEND_BTN": "SEND"
+  "CONTACT_SEND_BTN": "SEND",
+
+  "FAQ_TITRE": "FREQUENTLY ASKED QUESTIONS",
+  "FAQ_Q1": "Where to meet my driver at the airport?",
+  "FAQ_R1_A": " At the entrance of the «Relay» shop with a placard with your name. We are up to date on the status of your flight.",
+  "FAQ_R1_B": " In the arrival hall, in front of «Starbucks» coffee shop, he will be waiting with a placard with your name. We are up to date on the status of your flight.",
+  "FAQ_Q2": "What am i supposed to do if i do not find my driver at the meeting point?",
+  "FAQ_R2": "You will receive the contact number of your driver by email. At first, try to join him by phone, if he is still unreachable please call our support team to help resolve your problem.",
+  "FAQ_Q3": "You want to reserve a child seat, booster seat or baby seat?",
+  "FAQ_R3": "We will put at your disposal baby seats and child seats with an addition of 4.99€.",
+  "FAQ_Q4": "Can i travel with a pet?",
+  "FAQ_R4": "Yes, with a prior notice. You need to contact our support team and precis which animal. If you did not include this information, it may incur additional costs.",
+  "FAQ_Q5": "What am i supposed to do if my flight is retarded or cancelled?",
+  "FAQ_R5": "We are constantly up to date about your flight with the website of the airline company to keep the track, if your flight is cancelled, please call us to inform us of the situation.",
+  "FAQ_Q6": "COVID legal provision",
+  "FAQ_R6": "We advise our customers to wear a protective face mask when traveling."
 }

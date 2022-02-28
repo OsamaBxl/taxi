@@ -3,7 +3,7 @@
   "ABOUT": "OVER ONS",
   "RESERVATION": "RESERVERING",
   "CONTACT_US_BTN": "Neem contact op",
-  "BXL_AIRPORT": "Brussels Airport",
+  "BXL_AIRPORT": "Brussel Airport",
   "CHR_AIRPORT": "Luchthaven Brussel-Charleroi",
 
   "CANCEL_FREE": "Gratis afzegging",
@@ -71,5 +71,20 @@
   "CONTACT_PHONE": "Telefoonnummer",
   "CONTACT_SUBJECT": "Onderwerp",
   "CONTACT_MESSAGE": "Schrijf je bericht hier...",
-  "CONTACT_SEND_BTN": "VERSTUREN"
+  "CONTACT_SEND_BTN": "VERSTUREN",
+
+  "FAQ_TITRE": "VEEL GESTELDE VRAGEN",
+  "FAQ_Q1": "Waar ontmoet ik mijn chauffeur op de luchthaven?",
+  "FAQ_R1_A": " Bij de ingang, voor de «Relay» winkel met een bord met uw naam. We zijn constant op de hoogte van de status van de vlucht.",
+  "FAQ_R1_B": " In de aankomsthal, voor de koffiebar «Starbucks» met een bord met uw naam. We zijn constant op de hoogte van de status van de vlucht.",
+  "FAQ_Q2": "Wat moet ik doen als mijn chauffeur niet aan de ontmoetingspunt is?",
+  "FAQ_R2": "U zal het contactnummer van de chauffeur via e-mail krijgen. Probeer hem eerst telefonisch te bereiken, als u uw chauffeur niet telefonisch kunt bereiken, neem dan contact op met ons ondersteuningsteam om u te helpen het probleem op te lossen.",
+  "FAQ_Q3": "Een kinderzitje, stoelverhoger of kinderstoel bestellen? ",
+  "FAQ_R3": "Wij bieden babyzitjes en kinderzitjes, met een toeslag van 4,99 €.",
+  "FAQ_Q4": "kan ik reizen met mijn huisdier?",
+  "FAQ_R4": "Ja, dat kan met voorafgaande kennisgeving. U moet eerst contact opnemen met ons ondersteuningsteam en de details van het dier geven. Als u deze informatie niet in uw reserveratie opneemt, kunnen er extra kosten bijgevoegd worden.",
+  "FAQ_Q5": "Wat moet ik doen als mijn vlucht vertraagd of geannuleerd is?",
+  "FAQ_R5": "We zijn constant op de hoogte van de status van uw vlucht via de website van het luchtvaartmaatschapij. Als uw vlucht geannuleerd is nodigen wij u uit om contact op te nemen met het ondersteuningsteam",
+  "FAQ_Q6": "COVID wettelijke bepaling",
+  "FAQ_R6": "We adviseren onze klanten om tijdens het reizen een beschermend gezichtsmasker te dragen."
 }

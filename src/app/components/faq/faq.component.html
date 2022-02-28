@@ -1,5 +1,5 @@
 <div class="container my-4">
-    <h1 class="my-5">QUESTIONS FRÉQUEMMENT POSÉES</h1>
+    <h1 class="my-5">{{ "FAQ_TITRE" | translate}}</h1>
     <div class="row">
         <div class="col-sm-8">
             <div class="accordion" id="accordionExample">
@@ -7,19 +7,14 @@
                     <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <b>Où rencontrer mon chauffeur à l'aéroport ?</b>
+                            <b>{{ "FAQ_Q1" | translate}}</b>
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body my-1">
-                            Vous recevrez un e-mail de confirmation avec toutes les informations nécessaires concernant
-                            le
-                            point
-                            de rendez-vous.
-                            Notre numéro d'urgence se trouve dans votre confirmation de réservation. Vous recevrez la
-                            confirmation de réservation
-                            instantanément après avoir terminé le processus de réservation en ligne.
+                            <p><b>{{ "BXL_AIRPORT" | translate}}</b> {{ "FAQ_R1_A" | translate}}</p>
+                            <p><b>{{ "CHR_AIRPORT" | translate}}</b> {{ "FAQ_R1_B" | translate}}</p>
                         </div>
                     </div>
                 </div>
@@ -27,36 +22,24 @@
                     <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <b>Que dois-je faire si je ne trouve pas mon chauffeur au point de rendez-vous ?</b>
+                            <b>{{ "FAQ_Q2" | translate}}</b>
                         </button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body my-1">
-                            Vous recevrez les coordonnées du chauffeur par e-mail. Tout d'abord, essayez de le joindre
-                            par
-                            téléphone, si vous ne
-                            pouvez pas joindre votre chauffeur par téléphone, veuillez contacter notre équipe
-                            d'assistance
-                            pour
-                            vous aider à
-                            résoudre le problème.
-                        </div>
+                        <div class="accordion-body my-1"> {{ "FAQ_R2" | translate}}</div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <b>Réserver un siège enfant, un rehausseur ou une chaise bébé ?</b>
+                            <b>{{ "FAQ_Q3" | translate}}</b>
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Nous mettons à disposition des sièges bébé et des sièges enfants, avec un supplément de
-                            4.99€
-                        </div>
+                        <div class="accordion-body my-1"> {{ "FAQ_R3" | translate}}</div>
                     </div>
                 </div>
 
@@ -64,16 +47,12 @@
                     <h2 class="accordion-header" id="headingFour">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                            <b>Puis-je voyager avec mon animal de compagnie ?</b>
+                            <b>{{ "FAQ_Q4" | translate}}</b>
                         </button>
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Oui, vous pouvez avec notification préalable. Vous devez contacter notre équipe d'assistance
-                            et préciser les détails de l'animal. Si vous n'avez pas inclus ces informations dans votre
-                            réservation.
-                        </div>
+                        <div class="accordion-body my-1"> {{ "FAQ_R4" | translate}}</div>
                     </div>
                 </div>
 
@@ -81,15 +60,12 @@
                     <h2 class="accordion-header" id="headingFive">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                            <b>Disposition légale COVID</b>
+                            <b>{{ "FAQ_Q5" | translate}}</b>
                         </button>
                     </h2>
                     <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Nous conseillons à nos clients de porter un masque facial de protection lors de leurs
-                            déplacements.
-                        </div>
+                        <div class="accordion-body my-1"> {{ "FAQ_R5" | translate}}</div>
                     </div>
                 </div>
 
@@ -97,16 +73,12 @@
                     <h2 class="accordion-header" id="headingSix">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                            <b>Que faire si mon vol est retardé ou annulé ?</b>
+                            <b>{{ "FAQ_Q6" | translate}}</b>
                         </button>
                     </h2>
                     <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
                         data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            Nous vérifions toujours avec le site Web de la compagnie aérienne concernant les
-                            informations de vol pour garder la
-                            trace. Si votre vol est annulé, nous vous invitons à nous appeler pour nous en informer.
-                        </div>
+                        <div class="accordion-body my-1"> {{ "FAQ_R6" | translate}}</div>
                     </div>
                 </div>
             </div>
