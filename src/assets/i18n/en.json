@@ -45,6 +45,15 @@
   "ERROR": "Error",
   "PAYMENT_MODE": "The reservation is confirmed with a deposit of 25% of the total amount, while the remaining amount is paid directly to the driver in cash on the day of the transfer.",
 
+  "Champ requis": "Field is required",
+  "La longueur minimale est de 3 caractères": "Minimum length is 3 characters",
+  "Numéro valide": "Valid Phone Number",
+  "Le numéro de téléphone n'est pas valide": "Phone number is not valid",
+  "Le numéro de téléphone est trop long": "Phone number is too long",
+  "L'adresse e-mail n'est pas un e-mail valide": "Email address is not a valid email",
+  "Non": "No",
+  "Oui": "Yes",
+
   "ABOUT_PARAG_1": "is an online booking platform with headquarters in Brussels, specializing in a taxi service pickup from and to the airport.",
   "ABOUT_PARAG_2": ".We are passionate about our work, and our goal is to provide quality with professional drivers.",
   "ABOUT_CONFORT_TITLE": "Your comfort is our privilege",

@@ -28,6 +28,15 @@
   "Home_RESERVE_NOM": "Voor-en achternaam",
   "Home_RESERVE_RAMASSER": "Oppakken van",
 
+  "Champ requis": "Veld is verplicht",
+  "La longueur minimale est de 3 caractères": "Minimale lengte is 3 tekens",
+  "Numéro valide": "Geldig telefoonnummer",
+  "Le numéro de téléphone n'est pas valide": "Telefoonnummer is niet geldig",
+  "Le numéro de téléphone est trop long": "Telefoonnummer is te lang",
+  "L'adresse e-mail n'est pas un e-mail valide": "E-mailadres is geen geldig e-mailadres",
+  "Non": "Nee",
+  "Oui": "Ja",
+
   "Home_RAMASSER_AUTRE": "Ander",
   "Home_RESERVE_DEPOSER": "Afzetten bij",
   "Home_RESERVE_CHOIX": "Keuze van taxi",

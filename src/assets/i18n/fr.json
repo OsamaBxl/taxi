@@ -46,6 +46,15 @@
   "ERROR": "Numéro du",
   "PAYMENT_MODE": "La réservation est confirmée avec un acompte de 25% de la somme totale, tandis que le montant restant est payé directement au chauffeur en espèces le jour du transfert.",
 
+  "Champ requis": "Champ requis",
+  "La longueur minimale est de 3 caractères": "La longueur minimale est de 3 caractères",
+  "Numéro valide": "Numéro valide",
+  "Le numéro de téléphone n'est pas valide": "Le numéro de téléphone n'est pas valide",
+  "Le numéro de téléphone est trop long": "Le numéro de téléphone est trop long",
+  "L'adresse e-mail n'est pas un e-mail valide": "L'adresse e-mail n'est pas un e-mail valide",
+  "Non": "Non",
+  "Oui": "Oui",
+
   "ABOUT_PARAG_1": "est une plateforme de réservation en ligne dont le siège est à Bruxelles, spécialisée dans la prise en charge d'un service de taxi depuis et vers l'aéroport",
   "ABOUT_PARAG_2": "Nous sommes passionnés par notre travail, et notre objectif est de fournir de la qualité avec des chauffeurs professionnels",
   "ABOUT_CONFORT_TITLE": "Votre confort est notre privilège",
