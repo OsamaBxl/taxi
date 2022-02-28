@@ -242,6 +242,9 @@ export class HomeComponent implements OnInit {
           if (this.formValidate.get('choiceTaxi')?.value == 'standard') {
             if (this.DistanceValue / 1000 < 20) {
               this.estimatedPrice = (this.DistanceValue / 1000) * 2.4;
+              if (this.estimatedPrice < 25) {
+                this.estimatedPrice = 25;
+              }
             } else {
               this.estimatedPrice = (this.DistanceValue / 1000) * 1.5;
             }

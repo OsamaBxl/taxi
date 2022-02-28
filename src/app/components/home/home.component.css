@@ -1,3 +1,16 @@
+.facebook {
+  position: fixed;
+  transform: translateY(-50%);
+  top: 50%;
+  right: 0;
+  cursor: pointer;
+  z-index: 9999999;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
 .banner {
   position: relative;
   min-height: 300px;
